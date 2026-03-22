@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="440" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">Gateway — Two Ways to Run</text>
+  <text x="450" y="56" text-anchor="middle" fill="#64748b" font-size="12">Foreground (development) vs. background OS service (production)</text>
+
+  <!-- ═══════════════════════════════════
+       LEFT — Foreground Mode
+  ═══════════════════════════════════ -->
+  <rect x="30" y="78" width="400" height="330" rx="14" fill="#0d1526" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="30" y="78" width="400" height="44" rx="14" fill="#1d4ed8"/>
+  <rect x="30" y="106" width="400" height="16" fill="#1d4ed8"/>
+  <text x="230" y="106" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">Way 1 — Foreground (Manual)</text>
+  <text x="230" y="122" text-anchor="middle" fill="#bfdbfe" font-size="10">Runs in your terminal · stops when you close it</text>
+
+  <!-- Use for badge -->
+  <rect x="50" y="136" width="360" height="22" rx="6" fill="#1e3a5f"/>
+  <text x="230" y="151" text-anchor="middle" fill="#93c5fd" font-size="10">Best for: development, testing, first-time setup</text>
+
+  <!-- Commands -->
+  <text x="50" y="182" fill="#475569" font-size="10" font-weight="600">Start:</text>
+  <rect x="50" y="190" width="360" height="28" rx="6" fill="#060d1a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="66" y="208" fill="#60a5fa" font-size="11" font-family="'Courier New', monospace">openclaw gateway</text>
+
+  <text x="50" y="240" fill="#475569" font-size="10" font-weight="600">Stop:</text>
+  <rect x="50" y="248" width="360" height="28" rx="6" fill="#060d1a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="66" y="266" fill="#60a5fa" font-size="11" font-family="'Courier New', monospace">Ctrl + C   (in the terminal)</text>
+
+  <text x="50" y="298" fill="#475569" font-size="10" font-weight="600">With options:</text>
+  <rect x="50" y="306" width="360" height="52" rx="6" fill="#060d1a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="66" y="322" fill="#60a5fa" font-size="11" font-family="'Courier New', monospace">openclaw gateway --port 18789</text>
+  <text x="66" y="340" fill="#60a5fa" font-size="11" font-family="'Courier New', monospace">openclaw gateway --bind lan</text>
+  <text x="66" y="358" fill="#60a5fa" font-size="11" font-family="'Courier New', monospace">openclaw gateway --verbose</text>
+
+  <!-- Behaviour note -->
+  <rect x="50" y="368" width="360" height="26" rx="6" fill="#1e1b3a" stroke="#4338ca" stroke-width="1"/>
+  <text x="230" y="385" text-anchor="middle" fill="#818cf8" font-size="10">Gateway stops when terminal closes or Ctrl+C</text>
+
+  <!-- ═══════════════════════════════════
+       RIGHT — Service Mode
+  ═══════════════════════════════════ -->
+  <rect x="470" y="78" width="400" height="330" rx="14" fill="#0a1f14" stroke="#22c55e" stroke-width="2"/>
+  <rect x="470" y="78" width="400" height="44" rx="14" fill="#14532d"/>
+  <rect x="470" y="106" width="400" height="16" fill="#14532d"/>
+  <text x="670" y="106" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">Way 2 — Background Service</text>
+  <text x="670" y="122" text-anchor="middle" fill="#bbf7d0" font-size="10">Runs as OS service · survives reboots · auto-restarts</text>
+
+  <!-- Use for badge -->
+  <rect x="490" y="136" width="360" height="22" rx="6" fill="#14291e"/>
+  <text x="670" y="151" text-anchor="middle" fill="#86efac" font-size="10">Best for: production, always-on servers, daily use</text>
+
+  <!-- Install command -->
+  <text x="490" y="182" fill="#475569" font-size="10" font-weight="600">Install (first time):</text>
+  <rect x="490" y="190" width="360" height="28" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="506" y="208" fill="#4ade80" font-size="11" font-family="'Courier New', monospace">openclaw gateway install</text>
+
+  <!-- Lifecycle commands row -->
+  <text x="490" y="240" fill="#475569" font-size="10" font-weight="600">Lifecycle commands:</text>
+
+  <rect x="490" y="248" width="80" height="28" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="530" y="266" text-anchor="middle" fill="#4ade80" font-size="10" font-family="'Courier New', monospace">start</text>
+
+  <rect x="580" y="248" width="80" height="28" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="620" y="266" text-anchor="middle" fill="#4ade80" font-size="10" font-family="'Courier New', monospace">stop</text>
+
+  <rect x="670" y="248" width="86" height="28" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="713" y="266" text-anchor="middle" fill="#4ade80" font-size="10" font-family="'Courier New', monospace">restart</text>
+
+  <rect x="766" y="248" width="84" height="28" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="808" y="266" text-anchor="middle" fill="#ef4444" font-size="10" font-family="'Courier New', monospace">uninstall</text>
+
+  <text x="490" y="298" fill="#475569" font-size="10" font-weight="600">Full command form:</text>
+  <rect x="490" y="306" width="360" height="52" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="506" y="322" fill="#4ade80" font-size="11" font-family="'Courier New', monospace">openclaw gateway start</text>
+  <text x="506" y="340" fill="#4ade80" font-size="11" font-family="'Courier New', monospace">openclaw gateway stop</text>
+  <text x="506" y="358" fill="#4ade80" font-size="11" font-family="'Courier New', monospace">openclaw gateway status</text>
+
+  <!-- OS platform note -->
+  <rect x="490" y="368" width="360" height="26" rx="6" fill="#052e16" stroke="#166534" stroke-width="1"/>
+  <text x="670" y="381" text-anchor="middle" fill="#86efac" font-size="9" font-weight="600">macOS: launchd   ·   Linux: systemd   ·   Windows: schtasks</text>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <text x="450" y="428" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — Gateway Run Modes</text>
+
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="840" viewBox="0 0 760 840" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="760" height="840" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="380" y="36" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">Gateway Startup Sequence</text>
+  <text x="380" y="54" text-anchor="middle" fill="#475569" font-size="11">startGatewayServer() in server.impl.ts — ordered init steps</text>
+
+  <!-- helper: step box reused via offsets -->
+
+  <!-- Step 1 -->
+  <rect x="100" y="72" width="560" height="56" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="142" cy="100" r="14" fill="#1d4ed8"/>
+  <text x="142" y="105" text-anchor="middle" fill="white" font-size="11" font-weight="700">1</text>
+  <text x="380" y="93" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="600">Resolve Auth Config</text>
+  <text x="380" y="112" text-anchor="middle" fill="#64748b" font-size="10">mergeGatewayAuthConfig() · ensureGatewayStartupAuth() · read env OPENCLAW_GATEWAY_TOKEN</text>
+  <!-- side tag -->
+  <rect x="664" y="84" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="95" text-anchor="middle" fill="#818cf8" font-size="8">auth.ts</text>
+
+  <!-- Arrow -->
+  <line x1="380" y1="128" x2="380" y2="142" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,140 380,148 385,140" fill="#3b82f6"/>
+
+  <!-- Step 2 -->
+  <rect x="100" y="150" width="560" height="56" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <circle cx="142" cy="178" r="14" fill="#4f46e5"/>
+  <text x="142" y="183" text-anchor="middle" fill="white" font-size="11" font-weight="700">2</text>
+  <text x="380" y="171" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="600">Resolve Bind Host</text>
+  <text x="380" y="190" text-anchor="middle" fill="#64748b" font-size="10">resolveGatewayBindHost(mode, customHost) · probes TCP bind via canBindToHost()</text>
+  <rect x="664" y="162" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="173" text-anchor="middle" fill="#818cf8" font-size="8">net.ts</text>
+
+  <line x1="380" y1="206" x2="380" y2="220" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,218 380,226 385,218" fill="#6366f1"/>
+
+  <!-- Step 3 -->
+  <rect x="100" y="228" width="560" height="56" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <circle cx="142" cy="256" r="14" fill="#7c3aed"/>
+  <text x="142" y="261" text-anchor="middle" fill="white" font-size="11" font-weight="700">3</text>
+  <text x="380" y="249" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="600">Create Runtime State</text>
+  <text x="380" y="268" text-anchor="middle" fill="#64748b" font-size="10">createGatewayRuntimeState() · HTTP server + WebSocketServer · TLS if configured</text>
+  <rect x="664" y="240" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="251" text-anchor="middle" fill="#818cf8" font-size="8">server-runtime-state.ts</text>
+
+  <line x1="380" y1="284" x2="380" y2="298" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,296 380,304 385,296" fill="#8b5cf6"/>
+
+  <!-- Step 4 -->
+  <rect x="100" y="306" width="560" height="56" rx="10" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+  <circle cx="142" cy="334" r="14" fill="#be185d"/>
+  <text x="142" y="339" text-anchor="middle" fill="white" font-size="11" font-weight="700">4</text>
+  <text x="380" y="327" text-anchor="middle" fill="#f9a8d4" font-size="12" font-weight="600">Attach WS Handlers</text>
+  <text x="380" y="346" text-anchor="middle" fill="#64748b" font-size="10">attachGatewayWsHandlers() · registers all 25+ RPC method handlers · auth rate limiters</text>
+  <rect x="664" y="318" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="329" text-anchor="middle" fill="#818cf8" font-size="8">server-ws-runtime.ts</text>
+
+  <line x1="380" y1="362" x2="380" y2="376" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,374 380,382 385,374" fill="#ec4899"/>
+
+  <!-- Step 5 -->
+  <rect x="100" y="384" width="560" height="56" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="142" cy="412" r="14" fill="#b45309"/>
+  <text x="142" y="417" text-anchor="middle" fill="white" font-size="11" font-weight="700">5</text>
+  <text x="380" y="405" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="600">Start Sidecars</text>
+  <text x="380" y="424" text-anchor="middle" fill="#64748b" font-size="10">startGatewaySidecars() · browser control · Gmail watcher · session lock GC</text>
+  <rect x="664" y="396" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="407" text-anchor="middle" fill="#818cf8" font-size="8">server-startup.ts</text>
+
+  <line x1="380" y1="440" x2="380" y2="454" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,452 380,460 385,452" fill="#f59e0b"/>
+
+  <!-- Step 6 -->
+  <rect x="100" y="462" width="560" height="56" rx="10" fill="#1e293b" stroke="#0891b2" stroke-width="2"/>
+  <circle cx="142" cy="490" r="14" fill="#0e7490"/>
+  <text x="142" y="495" text-anchor="middle" fill="white" font-size="11" font-weight="700">6</text>
+  <text x="380" y="483" text-anchor="middle" fill="#67e8f9" font-size="12" font-weight="600">Connect Channels</text>
+  <text x="380" y="502" text-anchor="middle" fill="#64748b" font-size="10">createChannelManager() · start all configured channels · per-channel AbortController</text>
+  <rect x="664" y="474" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="485" text-anchor="middle" fill="#818cf8" font-size="8">server-channels.ts</text>
+
+  <line x1="380" y1="518" x2="380" y2="532" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,530 380,538 385,530" fill="#0891b2"/>
+
+  <!-- Step 7 -->
+  <rect x="100" y="540" width="560" height="56" rx="10" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+  <circle cx="142" cy="568" r="14" fill="#7e22ce"/>
+  <text x="142" y="573" text-anchor="middle" fill="white" font-size="11" font-weight="700">7</text>
+  <text x="380" y="561" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="600">Start Health Monitor + Config Reloader</text>
+  <text x="380" y="580" text-anchor="middle" fill="#64748b" font-size="10">startChannelHealthMonitor() · startGatewayConfigReloader() via chokidar · cron service</text>
+  <rect x="664" y="552" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="563" text-anchor="middle" fill="#818cf8" font-size="8">config-reload.ts</text>
+
+  <line x1="380" y1="596" x2="380" y2="610" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,608 380,616 385,608" fill="#a855f7"/>
+
+  <!-- Step 8 -->
+  <rect x="100" y="618" width="560" height="56" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+  <circle cx="142" cy="646" r="14" fill="#15803d"/>
+  <text x="142" y="651" text-anchor="middle" fill="white" font-size="11" font-weight="700">8</text>
+  <text x="380" y="639" text-anchor="middle" fill="#86efac" font-size="12" font-weight="600">Run BOOT.md + Start Discovery</text>
+  <text x="380" y="658" text-anchor="middle" fill="#64748b" font-size="10">runBoot() reads workspace/BOOT.md · startGatewayDiscovery() mDNS _openclaw-gw._tcp</text>
+  <rect x="664" y="630" width="78" height="16" rx="4" fill="#1e1b3a"/>
+  <text x="703" y="641" text-anchor="middle" fill="#818cf8" font-size="8">boot.ts</text>
+
+  <line x1="380" y1="674" x2="380" y2="688" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="375,686 380,694 385,686" fill="#22c55e"/>
+
+  <!-- Step 9 — READY -->
+  <rect x="100" y="696" width="560" height="56" rx="10" fill="#14532d" stroke="#22c55e" stroke-width="2.5"/>
+  <circle cx="142" cy="724" r="14" fill="#16a34a"/>
+  <text x="142" y="729" text-anchor="middle" fill="white" font-size="11" font-weight="700">9</text>
+  <text x="380" y="717" text-anchor="middle" fill="#bbf7d0" font-size="12" font-weight="700">READY — Gateway is live</text>
+  <text x="380" y="736" text-anchor="middle" fill="#86efac" font-size="10">logGatewayStartup() · broadcast "gateway.ready" · WS connections accepted · HTTP serving</text>
+
+  <!-- Footer -->
+  <text x="380" y="820" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — Gateway Startup Sequence · server.impl.ts::startGatewayServer()</text>
+
+</svg>

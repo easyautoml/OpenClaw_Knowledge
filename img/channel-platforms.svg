@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="420" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="410" y="30" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">Supported Channels — 40+ Messaging Platforms</text>
+  <text x="410" y="48" text-anchor="middle" fill="#475569" font-size="11">Each channel is a plugin — connect to the apps your team or family already uses</text>
+
+  <!-- ══════════ Mobile Messaging — top left ══════════ -->
+  <rect x="20" y="66" width="386" height="152" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="20" y="54" width="200" height="24" rx="6" fill="#1d4ed8"/>
+  <text x="120" y="71" text-anchor="middle" fill="#bfdbfe" font-size="11" font-weight="700">📱  Mobile Messaging</text>
+
+  <text x="36" y="98" fill="#93c5fd" font-size="11">• Telegram</text>
+  <text x="36" y="116" fill="#93c5fd" font-size="11">• WhatsApp</text>
+  <text x="36" y="134" fill="#93c5fd" font-size="11">• Signal</text>
+  <text x="36" y="152" fill="#93c5fd" font-size="11">• iMessage / BlueBubbles</text>
+  <text x="36" y="170" fill="#93c5fd" font-size="11">• SMS (via gateway)</text>
+
+  <text x="226" y="98" fill="#475569" font-size="10">API token — quick setup</text>
+  <text x="226" y="116" fill="#475569" font-size="10">Phone pairing required</text>
+  <text x="226" y="134" fill="#475569" font-size="10">Phone pairing required</text>
+  <text x="226" y="152" fill="#475569" font-size="10">macOS + BlueBubbles app</text>
+  <text x="226" y="170" fill="#475569" font-size="10">Hardware gateway needed</text>
+
+  <text x="206" y="206" text-anchor="middle" fill="#334155" font-size="10" font-style="italic">Best for personal use</text>
+
+  <!-- ══════════ Team & Work — top right ══════════ -->
+  <rect x="414" y="66" width="386" height="152" rx="10" fill="#1e1b3a" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="414" y="54" width="200" height="24" rx="6" fill="#6d28d9"/>
+  <text x="514" y="71" text-anchor="middle" fill="#ede9fe" font-size="11" font-weight="700">💼  Team &amp; Work</text>
+
+  <text x="430" y="98" fill="#a5b4fc" font-size="11">• Slack</text>
+  <text x="430" y="116" fill="#a5b4fc" font-size="11">• Discord</text>
+  <text x="430" y="134" fill="#a5b4fc" font-size="11">• Microsoft Teams</text>
+  <text x="430" y="152" fill="#a5b4fc" font-size="11">• Mattermost</text>
+  <text x="430" y="170" fill="#a5b4fc" font-size="11">• Nextcloud Talk</text>
+
+  <text x="594" y="98" fill="#475569" font-size="10">OAuth or bot token</text>
+  <text x="594" y="116" fill="#475569" font-size="10">Bot token, invite to server</text>
+  <text x="594" y="134" fill="#475569" font-size="10">Azure app registration</text>
+  <text x="594" y="152" fill="#475569" font-size="10">Server URL + token</text>
+  <text x="594" y="170" fill="#475569" font-size="10">Server URL + token</text>
+
+  <text x="607" y="206" text-anchor="middle" fill="#334155" font-size="10" font-style="italic">Best for work environments</text>
+
+  <!-- ══════════ Regional Platforms — bottom left ══════════ -->
+  <rect x="20" y="232" width="386" height="152" rx="10" fill="#1c1408" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="20" y="220" width="200" height="24" rx="6" fill="#b45309"/>
+  <text x="120" y="237" text-anchor="middle" fill="#fef3c7" font-size="11" font-weight="700">🌏  Regional Platforms</text>
+
+  <text x="36" y="264" fill="#fcd34d" font-size="11">• LINE</text>
+  <text x="36" y="282" fill="#fcd34d" font-size="11">• Zalo / Zalo Personal</text>
+  <text x="36" y="300" fill="#fcd34d" font-size="11">• Feishu (Lark)</text>
+  <text x="36" y="318" fill="#fcd34d" font-size="11">• Google Chat</text>
+  <text x="36" y="336" fill="#fcd34d" font-size="11">• Synology Chat</text>
+
+  <text x="226" y="264" fill="#475569" font-size="10">Japan / Taiwan / Southeast Asia</text>
+  <text x="226" y="282" fill="#475569" font-size="10">Vietnam</text>
+  <text x="226" y="300" fill="#475569" font-size="10">China / Asia (ByteDance)</text>
+  <text x="226" y="318" fill="#475569" font-size="10">Google Workspace users</text>
+  <text x="226" y="336" fill="#475569" font-size="10">Synology NAS users</text>
+
+  <text x="206" y="372" text-anchor="middle" fill="#334155" font-size="10" font-style="italic">Region-specific integrations</text>
+
+  <!-- ══════════ Developer & Other — bottom right ══════════ -->
+  <rect x="414" y="232" width="386" height="152" rx="10" fill="#071a0e" stroke="#10b981" stroke-width="2"/>
+  <rect x="414" y="220" width="200" height="24" rx="6" fill="#065f46"/>
+  <text x="514" y="237" text-anchor="middle" fill="#d1fae5" font-size="11" font-weight="700">🔧  Developer &amp; Other</text>
+
+  <text x="430" y="264" fill="#6ee7b7" font-size="11">• Matrix</text>
+  <text x="430" y="282" fill="#6ee7b7" font-size="11">• IRC</text>
+  <text x="430" y="300" fill="#6ee7b7" font-size="11">• Nostr</text>
+  <text x="430" y="318" fill="#6ee7b7" font-size="11">• Twitch</text>
+  <text x="430" y="336" fill="#6ee7b7" font-size="11">• WebChat / Voice Call</text>
+
+  <text x="594" y="264" fill="#475569" font-size="10">Open, federated protocol</text>
+  <text x="594" y="282" fill="#475569" font-size="10">Classic chat networks</text>
+  <text x="594" y="300" fill="#475569" font-size="10">Decentralized social</text>
+  <text x="594" y="318" fill="#475569" font-size="10">Live stream chat</text>
+  <text x="594" y="336" fill="#475569" font-size="10">Browser widget / audio</text>
+
+  <text x="607" y="372" text-anchor="middle" fill="#334155" font-size="10" font-style="italic">Open / niche platforms</text>
+
+  <!-- Footer -->
+  <rect x="120" y="397" width="580" height="16" rx="4" fill="#1e293b"/>
+  <text x="410" y="409" text-anchor="middle" fill="#475569" font-size="10">New platforms can be added as plugins — discover available ones with: openclaw channels list</text>
+
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="310" viewBox="0 0 820 310" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="310" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="410" y="26" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">ClawHub — Skills Registry Ecosystem</text>
+  <text x="410" y="44" text-anchor="middle" fill="#475569" font-size="11">A separate service and CLI for discovering, installing, and publishing OpenClaw skills</text>
+
+  <!-- ══ ClawHub Registry (centre) ══ -->
+  <rect x="290" y="58" width="240" height="170" rx="12" fill="#1a0d2e" stroke="#8b5cf6" stroke-width="2.5"/>
+  <rect x="290" y="46" width="240" height="22" rx="5" fill="#5b21b6"/>
+  <text x="410" y="61" text-anchor="middle" fill="#ede9fe" font-size="11" font-weight="700">ClawHub Registry (clawhub.ai)</text>
+
+  <text x="410" y="98" text-anchor="middle" fill="#c4b5fd" font-size="26">🏛</text>
+  <text x="410" y="122" text-anchor="middle" fill="#a78bfa" font-size="11" font-weight="600">Public skill store</text>
+
+  <line x1="305" y1="133" x2="515" y2="133" stroke="#2e1b4e" stroke-width="1"/>
+
+  <text x="305" y="150" fill="#64748b" font-size="10">• All skills are public and open</text>
+  <text x="305" y="166" fill="#64748b" font-size="10">• Vector search discovery</text>
+  <text x="305" y="182" fill="#64748b" font-size="10">• Semver versioning + changelogs</text>
+  <text x="305" y="198" fill="#64748b" font-size="10">• Stars, comments, moderation</text>
+  <text x="305" y="214" fill="#475569" font-size="10" font-style="italic">Anyone with a GitHub account can publish</text>
+
+  <!-- ══ Left box: Your Workspace ══ -->
+  <rect x="20" y="58" width="210" height="170" rx="12" fill="#071a12" stroke="#10b981" stroke-width="2"/>
+  <rect x="20" y="46" width="210" height="22" rx="5" fill="#065f46"/>
+  <text x="125" y="61" text-anchor="middle" fill="#d1fae5" font-size="11" font-weight="700">Your Workspace</text>
+
+  <text x="125" y="98" text-anchor="middle" fill="#6ee7b7" font-size="26">💻</text>
+  <text x="125" y="122" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">OpenClaw agent</text>
+
+  <line x1="35" y1="133" x2="215" y2="133" stroke="#134e3c" stroke-width="1"/>
+
+  <text x="35" y="150" fill="#64748b" font-size="10">workspace/skills/</text>
+  <text x="35" y="165" fill="#64748b" font-size="10">~/.openclaw/skills/</text>
+  <text x="35" y="180" fill="#64748b" font-size="10">.clawhub/lock.json</text>
+  <text x="35" y="200" fill="#475569" font-size="10" font-style="italic">Skills loaded at session start</text>
+  <text x="35" y="215" fill="#475569" font-size="10" font-style="italic">into LLM context</text>
+
+  <!-- ══ Right box: Community / Others ══ -->
+  <rect x="590" y="58" width="210" height="170" rx="12" fill="#1c1408" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="590" y="46" width="210" height="22" rx="5" fill="#b45309"/>
+  <text x="695" y="61" text-anchor="middle" fill="#fef3c7" font-size="11" font-weight="700">Community</text>
+
+  <text x="695" y="98" text-anchor="middle" fill="#fcd34d" font-size="26">🌍</text>
+  <text x="695" y="122" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">Skill authors worldwide</text>
+
+  <line x1="605" y1="133" x2="785" y2="133" stroke="#3a2200" stroke-width="1"/>
+
+  <text x="605" y="150" fill="#64748b" font-size="10">clawhub publish ./my-skill</text>
+  <text x="605" y="165" fill="#64748b" font-size="10">clawhub sync --all</text>
+  <text x="605" y="180" fill="#64748b" font-size="10">Versioned releases (semver)</text>
+  <text x="605" y="200" fill="#475569" font-size="10" font-style="italic">You can also publish your</text>
+  <text x="605" y="215" fill="#475569" font-size="10" font-style="italic">own skills to ClawHub</text>
+
+  <!-- Arrow: Registry → Workspace (install/download) -->
+  <line x1="288" y1="128" x2="232" y2="128" stroke="#10b981" stroke-width="2"/>
+  <polygon points="234,122 224,128 234,134" fill="#10b981"/>
+  <rect x="228" y="108" width="64" height="16" rx="3" fill="#071a12"/>
+  <text x="260" y="120" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">install / update</text>
+
+  <!-- Arrow: Workspace → Registry (publish/sync) -->
+  <line x1="232" y1="158" x2="288" y2="158" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="286,152 296,158 286,164" fill="#475569"/>
+  <rect x="228" y="162" width="64" height="14" rx="3" fill="#0f1117"/>
+  <text x="260" y="172" text-anchor="middle" fill="#475569" font-size="9">publish / sync</text>
+
+  <!-- Arrow: Community → Registry (publish) -->
+  <line x1="588" y1="128" x2="532" y2="128" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="534,122 524,128 534,134" fill="#f59e0b"/>
+  <rect x="528" y="108" width="64" height="16" rx="3" fill="#1c1408"/>
+  <text x="560" y="120" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">publish skills</text>
+
+  <!-- Arrow: Registry → Community (browse/download) -->
+  <line x1="532" y1="158" x2="588" y2="158" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="586,152 596,158 586,164" fill="#475569"/>
+  <rect x="528" y="162" width="64" height="14" rx="3" fill="#0f1117"/>
+  <text x="560" y="172" text-anchor="middle" fill="#475569" font-size="9">browse / search</text>
+
+  <!-- ══ Footer: clawhub CLI commands ══ -->
+  <rect x="20" y="244" width="780" height="54" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="410" y="262" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="700">clawhub CLI — installed separately: npm i -g clawhub</text>
+
+  <text x="40" y="280" fill="#64748b" font-size="10" font-weight="600">clawhub search "email"</text>
+  <text x="40" y="292" fill="#475569" font-size="9">find skills</text>
+
+  <text x="200" y="280" fill="#10b981" font-size="10" font-weight="600">clawhub install my-skill</text>
+  <text x="200" y="292" fill="#475569" font-size="9">download + place in ./skills</text>
+
+  <text x="390" y="280" fill="#38bdf8" font-size="10" font-weight="600">clawhub update --all</text>
+  <text x="390" y="292" fill="#475569" font-size="9">upgrade all installed skills</text>
+
+  <text x="570" y="280" fill="#f59e0b" font-size="10" font-weight="600">clawhub publish ./path</text>
+  <text x="570" y="292" fill="#475569" font-size="9">share your skill publicly</text>
+
+</svg>

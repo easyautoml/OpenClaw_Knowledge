@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="480" viewBox="0 0 940 480" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="940" height="480" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="470" y="36" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">Gateway Bind Modes — Who Can Reach It?</text>
+  <text x="470" y="56" text-anchor="middle" fill="#64748b" font-size="12">Controls which network interfaces the Gateway listens on</text>
+
+  <!-- ═══ LOOPBACK (most secure, default) ═══ -->
+  <rect x="30" y="76" width="420" height="172" rx="12" fill="#0d1526" stroke="#22c55e" stroke-width="2"/>
+  <rect x="30" y="76" width="420" height="36" rx="12" fill="#14532d"/>
+  <rect x="30" y="98" width="420" height="14" fill="#14532d"/>
+  <text x="240" y="98" text-anchor="middle" fill="#bbf7d0" font-size="12" font-weight="700">loopback  (127.0.0.1) — Default</text>
+  <text x="240" y="112" text-anchor="middle" fill="#86efac" font-size="9">Most secure — only this machine can connect</text>
+
+  <!-- diagram: single machine -->
+  <rect x="50" y="122" width="100" height="60" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="100" y="148" text-anchor="middle" fill="#86efac" font-size="10">Your</text>
+  <text x="100" y="162" text-anchor="middle" fill="#86efac" font-size="10">Machine</text>
+  <circle cx="150" cy="152" r="6" fill="#22c55e"/>
+  <text x="165" y="157" fill="#4ade80" font-size="9">Gateway</text>
+  <line x1="150" y1="152" x2="170" y2="152" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="218" y="157" fill="#64748b" font-size="9">Only same machine</text>
+  <line x1="200" y1="140" x2="300" y2="140" stroke="#334155" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="220" y="197" fill="#475569" font-size="9">Other machines cannot reach the Gateway</text>
+
+  <rect x="50" y="210" width="380" height="24" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="66" y="226" fill="#86efac" font-size="10" font-family="'Courier New', monospace">openclaw gateway --bind loopback</text>
+  <text x="310" y="226" fill="#475569" font-size="9">(or omit --bind)</text>
+
+  <!-- ═══ LAN ═══ -->
+  <rect x="490" y="76" width="420" height="172" rx="12" fill="#0d1526" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="490" y="76" width="420" height="36" rx="12" fill="#78350f"/>
+  <rect x="490" y="98" width="420" height="14" fill="#78350f"/>
+  <text x="700" y="98" text-anchor="middle" fill="#fef3c7" font-size="12" font-weight="700">lan  (0.0.0.0) — All Interfaces</text>
+  <text x="700" y="112" text-anchor="middle" fill="#fbbf24" font-size="9">Accessible from your local network</text>
+
+  <!-- diagram: multiple machines -->
+  <rect x="510" y="122" width="80" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="550" y="148" text-anchor="middle" fill="#fbbf24" font-size="9">Your</text>
+  <text x="550" y="162" text-anchor="middle" fill="#fbbf24" font-size="9">Machine</text>
+  <!-- lines to other devices -->
+  <line x1="590" y1="147" x2="630" y2="135" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="590" y1="147" x2="630" y2="155" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="590" y1="147" x2="630" y2="175" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="630" y="122" width="60" height="22" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="660" y="137" text-anchor="middle" fill="#fbbf24" font-size="8">Phone</text>
+  <rect x="630" y="148" width="60" height="22" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="660" y="163" text-anchor="middle" fill="#fbbf24" font-size="8">Laptop</text>
+  <rect x="630" y="172" width="60" height="22" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="660" y="187" text-anchor="middle" fill="#fbbf24" font-size="8">Server</text>
+  <text x="730" y="157" fill="#64748b" font-size="9">Same WiFi/LAN</text>
+  <text x="510" y="205" fill="#475569" font-size="9">All devices on the same network can connect</text>
+
+  <rect x="510" y="210" width="380" height="24" rx="6" fill="#1a0e00" stroke="#78350f" stroke-width="1"/>
+  <text x="526" y="226" fill="#fbbf24" font-size="10" font-family="'Courier New', monospace">openclaw gateway --bind lan</text>
+
+  <!-- ═══ TAILNET ═══ -->
+  <rect x="30" y="264" width="420" height="172" rx="12" fill="#082f49" stroke="#0891b2" stroke-width="2"/>
+  <rect x="30" y="264" width="420" height="36" rx="12" fill="#0c4a6e"/>
+  <rect x="30" y="286" width="420" height="14" fill="#0c4a6e"/>
+  <text x="240" y="286" text-anchor="middle" fill="#e0f2fe" font-size="12" font-weight="700">tailnet — Tailscale VPN Network</text>
+  <text x="240" y="300" text-anchor="middle" fill="#7dd3fc" font-size="9">Accessible only to devices in your Tailscale network</text>
+
+  <!-- diagram -->
+  <rect x="50" y="314" width="80" height="50" rx="8" fill="#0c2a3d" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="90" y="336" text-anchor="middle" fill="#7dd3fc" font-size="9">Your</text>
+  <text x="90" y="350" text-anchor="middle" fill="#7dd3fc" font-size="9">Server</text>
+  <line x1="130" y1="339" x2="170" y2="329" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="130" y1="339" x2="170" y2="349" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="170" y="318" width="70" height="22" rx="6" fill="#0c2a3d" stroke="#0891b2" stroke-width="1"/>
+  <text x="205" y="333" text-anchor="middle" fill="#7dd3fc" font-size="8">Home PC</text>
+  <rect x="170" y="344" width="70" height="22" rx="6" fill="#0c2a3d" stroke="#0891b2" stroke-width="1"/>
+  <text x="205" y="359" text-anchor="middle" fill="#7dd3fc" font-size="8">Phone</text>
+  <text x="260" y="340" fill="#64748b" font-size="8">Tailscale VPN</text>
+  <text x="260" y="352" fill="#64748b" font-size="8">encrypted tunnel</text>
+  <text x="50" y="393" fill="#475569" font-size="9">Works across internet — no public port needed</text>
+
+  <rect x="50" y="400" width="380" height="24" rx="6" fill="#050f1a" stroke="#0c4a6e" stroke-width="1"/>
+  <text x="66" y="416" fill="#7dd3fc" font-size="10" font-family="'Courier New', monospace">openclaw gateway --bind tailnet</text>
+
+  <!-- ═══ AUTO ═══ -->
+  <rect x="490" y="264" width="420" height="172" rx="12" fill="#1a0d26" stroke="#a855f7" stroke-width="2"/>
+  <rect x="490" y="264" width="420" height="36" rx="12" fill="#4c1d95"/>
+  <rect x="490" y="286" width="420" height="14" fill="#4c1d95"/>
+  <text x="700" y="286" text-anchor="middle" fill="#ede9fe" font-size="12" font-weight="700">auto — Smart Fallback</text>
+  <text x="700" y="300" text-anchor="middle" fill="#c4b5fd" font-size="9">Tries loopback first, falls back to all interfaces</text>
+
+  <!-- decision diagram -->
+  <rect x="510" y="318" width="130" height="28" rx="6" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="575" y="336" text-anchor="middle" fill="#d8b4fe" font-size="9">loopback available?</text>
+  <!-- yes -->
+  <line x1="640" y1="332" x2="670" y2="322" stroke="#a855f7" stroke-width="1.5"/>
+  <rect x="670" y="310" width="80" height="22" rx="6" fill="#2d1a3d" stroke="#22c55e" stroke-width="1"/>
+  <text x="710" y="325" text-anchor="middle" fill="#86efac" font-size="9">use loopback</text>
+  <text x="658" y="316" fill="#86efac" font-size="8">Yes</text>
+  <!-- no -->
+  <line x1="640" y1="340" x2="670" y2="350" stroke="#a855f7" stroke-width="1.5"/>
+  <rect x="670" y="340" width="80" height="22" rx="6" fill="#2d1a3d" stroke="#f59e0b" stroke-width="1"/>
+  <text x="710" y="355" text-anchor="middle" fill="#fbbf24" font-size="9">use 0.0.0.0</text>
+  <text x="658" y="358" fill="#f59e0b" font-size="8">No</text>
+
+  <text x="510" y="395" fill="#475569" font-size="9">Recommended when you are unsure which bind mode to use</text>
+
+  <rect x="510" y="400" width="380" height="24" rx="6" fill="#120b1e" stroke="#4c1d95" stroke-width="1"/>
+  <text x="526" y="416" fill="#c4b5fd" font-size="10" font-family="'Courier New', monospace">openclaw gateway --bind auto</text>
+
+  <!-- ═══ FOOTER ═══ -->
+  <text x="470" y="468" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — Gateway Bind Modes</text>
+
+</svg>

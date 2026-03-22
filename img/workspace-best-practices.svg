@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="530" viewBox="0 0 860 530" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="860" height="530" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="430" y="32" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">Workspace Best Practices — Do vs Don't</text>
+
+  <!-- ══════════════════════════════════════
+       LEFT PANEL — DO ✓
+  ══════════════════════════════════════ -->
+  <rect x="20" y="48" width="400" height="464" rx="12" fill="#071a0e" stroke="#22c55e" stroke-width="2"/>
+  <rect x="20" y="36" width="400" height="26" rx="6" fill="#14532d"/>
+  <text x="220" y="53" text-anchor="middle" fill="#bbf7d0" font-size="13" font-weight="700">✓  Do This</text>
+
+  <!-- ── Rule 1: One folder per agent ── -->
+  <text x="38" y="82" fill="#4ade80" font-size="11" font-weight="700">1 — One folder per agent</text>
+
+  <!-- Folder tree - DO -->
+  <rect x="30" y="90" width="380" height="118" rx="8" fill="#0d2b17" stroke="#166534" stroke-width="1"/>
+
+  <text x="46" y="112" fill="#86efac" font-size="11">📁 ~/workspaces/</text>
+
+  <line x1="62" y1="118" x2="62" y2="192" stroke="#166534" stroke-width="1"/>
+  <line x1="62" y1="130" x2="74" y2="130" stroke="#166534" stroke-width="1"/>
+  <text x="78" y="134" fill="#86efac" font-size="11">📁 personal-assistant/</text>
+  <rect x="250" y="121" width="68" height="18" rx="4" fill="#14532d"/>
+  <text x="284" y="133" text-anchor="middle" fill="#4ade80" font-size="10">⚙ Agent A</text>
+  <text x="334" y="133" fill="#22c55e" font-size="10">📄 CLAUDE.md</text>
+
+  <line x1="62" y1="152" x2="74" y2="152" stroke="#166534" stroke-width="1"/>
+  <text x="78" y="156" fill="#86efac" font-size="11">📁 coding-agent/</text>
+  <rect x="230" y="143" width="68" height="18" rx="4" fill="#14532d"/>
+  <text x="264" y="155" text-anchor="middle" fill="#4ade80" font-size="10">⚙ Agent B</text>
+  <text x="310" y="155" fill="#22c55e" font-size="10">📄 CLAUDE.md</text>
+
+  <line x1="62" y1="174" x2="74" y2="174" stroke="#166534" stroke-width="1"/>
+  <text x="78" y="178" fill="#86efac" font-size="11">📁 research-agent/</text>
+  <rect x="238" y="165" width="68" height="18" rx="4" fill="#14532d"/>
+  <text x="272" y="177" text-anchor="middle" fill="#4ade80" font-size="10">⚙ Agent C</text>
+  <text x="318" y="177" fill="#22c55e" font-size="10">📄 CLAUDE.md</text>
+
+  <text x="46" y="200" fill="#475569" font-size="10" font-style="italic">Each agent has its own folder — no overlap</text>
+
+  <!-- ── Rule 2: CLAUDE.md ── -->
+  <text x="38" y="228" fill="#4ade80" font-size="11" font-weight="700">2 — Always add CLAUDE.md</text>
+
+  <rect x="30" y="236" width="380" height="84" rx="8" fill="#0d2b17" stroke="#166534" stroke-width="1"/>
+  <text x="46" y="256" fill="#86efac" font-size="11">📁 personal-assistant/</text>
+  <text x="46" y="274" fill="#22c55e" font-size="11">  📄 CLAUDE.md</text>
+  <rect x="190" y="263" width="210" height="18" rx="4" fill="#052e16"/>
+  <text x="295" y="275" text-anchor="middle" fill="#4ade80" font-size="10">"You are my personal assistant…"</text>
+  <text x="46" y="292" fill="#475569" font-size="11">  📁 my-notes/</text>
+  <text x="46" y="310" fill="#334155" font-size="10" font-style="italic">  Loaded into agent context every startup</text>
+
+  <!-- ── Rule 3: Specific path ── -->
+  <text x="38" y="342" fill="#4ade80" font-size="11" font-weight="700">3 — Use a specific subfolder</text>
+
+  <rect x="30" y="350" width="380" height="60" rx="8" fill="#0d2b17" stroke="#166534" stroke-width="1"/>
+  <text x="46" y="372" fill="#86efac" font-size="12">"workspace": "~/code/project-x"</text>
+  <text x="46" y="392" fill="#475569" font-size="10" font-style="italic">Agent only sees the files it needs</text>
+
+  <!-- ── Rule 4: Match work ── -->
+  <text x="38" y="430" fill="#4ade80" font-size="11" font-weight="700">4 — Match folder to purpose</text>
+
+  <rect x="30" y="438" width="380" height="60" rx="8" fill="#0d2b17" stroke="#166534" stroke-width="1"/>
+  <text x="46" y="458" fill="#86efac" font-size="11">Coding agent  →  ~/code/my-project</text>
+  <text x="46" y="476" fill="#86efac" font-size="11">Research agent  →  ~/research/papers</text>
+  <text x="46" y="494" fill="#475569" font-size="10" font-style="italic">Right files in the right place</text>
+
+
+  <!-- ══════════════════════════════════════
+       RIGHT PANEL — DON'T ✗
+  ══════════════════════════════════════ -->
+  <rect x="440" y="48" width="400" height="464" rx="12" fill="#1a0808" stroke="#ef4444" stroke-width="2"/>
+  <rect x="440" y="36" width="400" height="26" rx="6" fill="#7f1d1d"/>
+  <text x="640" y="53" text-anchor="middle" fill="#fecaca" font-size="13" font-weight="700">✗  Don't Do This</text>
+
+  <!-- ── Anti 1: Shared folder ── -->
+  <text x="458" y="82" fill="#f87171" font-size="11" font-weight="700">1 — Two agents sharing the same folder</text>
+
+  <rect x="450" y="90" width="380" height="118" rx="8" fill="#2a0d0d" stroke="#7f1d1d" stroke-width="1"/>
+
+  <text x="466" y="112" fill="#fca5a5" font-size="11">📁 ~/shared-workspace/</text>
+
+  <line x1="482" y1="118" x2="482" y2="160" stroke="#7f1d1d" stroke-width="1"/>
+  <line x1="482" y1="130" x2="494" y2="130" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="498" y="134" fill="#fca5a5" font-size="11">📄 CLAUDE.md</text>
+  <text x="498" y="150" fill="#64748b" font-size="10">← whose instructions are these?</text>
+
+  <!-- two agents pointing to same folder with confusion arrow -->
+  <rect x="466" y="162" width="68" height="20" rx="4" fill="#450a0a"/>
+  <text x="500" y="176" text-anchor="middle" fill="#f87171" font-size="10">⚙ Agent A</text>
+  <rect x="554" y="162" width="68" height="20" rx="4" fill="#450a0a"/>
+  <text x="588" y="176" text-anchor="middle" fill="#f87171" font-size="10">⚙ Agent B</text>
+  <!-- collision symbol -->
+  <text x="644" y="176" fill="#ef4444" font-size="14" font-weight="700">⚡</text>
+
+  <text x="466" y="200" fill="#475569" font-size="10" font-style="italic">Agents read each other's files — confused behavior</text>
+
+  <!-- ── Anti 2: No CLAUDE.md ── -->
+  <text x="458" y="228" fill="#f87171" font-size="11" font-weight="700">2 — No CLAUDE.md</text>
+
+  <rect x="450" y="236" width="380" height="84" rx="8" fill="#2a0d0d" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="466" y="256" fill="#fca5a5" font-size="11">📁 my-workspace/</text>
+  <text x="466" y="274" fill="#64748b" font-size="11">  (no CLAUDE.md)</text>
+  <text x="466" y="292" fill="#64748b" font-size="11">  📁 some-files/</text>
+  <rect x="460" y="302" width="360" height="14" rx="3" fill="#450a0a"/>
+  <text x="640" y="313" text-anchor="middle" fill="#f87171" font-size="10">Agent has no instructions — behaves generically every time</text>
+
+  <!-- ── Anti 3: Home dir ── -->
+  <text x="458" y="342" fill="#f87171" font-size="11" font-weight="700">3 — Home directory as workspace</text>
+
+  <rect x="450" y="350" width="380" height="60" rx="8" fill="#2a0d0d" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="466" y="372" fill="#fca5a5" font-size="12">"workspace": "~/"</text>
+  <text x="466" y="392" fill="#475569" font-size="10" font-style="italic">Agent can read everything — passwords, config, all files</text>
+
+  <!-- ── Anti 4: Wrong folder ── -->
+  <text x="458" y="430" fill="#f87171" font-size="11" font-weight="700">4 — Too broad a path</text>
+
+  <rect x="450" y="438" width="380" height="60" rx="8" fill="#2a0d0d" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="466" y="458" fill="#fca5a5" font-size="11">Coding agent  →  ~/code   (all projects mixed)</text>
+  <text x="466" y="476" fill="#fca5a5" font-size="11">Research agent  →  ~/      (entire home folder)</text>
+  <text x="466" y="494" fill="#475569" font-size="10" font-style="italic">Agent reads irrelevant files — slower and unpredictable</text>
+
+</svg>

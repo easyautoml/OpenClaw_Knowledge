@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="420" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="450" y="26" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">End-to-End Flow: Channel → Agent → LLM → Tools → Skills</text>
+  <text x="450" y="44" text-anchor="middle" fill="#475569" font-size="11">How a user message becomes an action in the world</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  ROW 1: Channel → Agent                    -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Channel box -->
+  <rect x="20" y="58" width="140" height="110" rx="10" fill="#1a1230" stroke="#6264a7" stroke-width="2"/>
+  <rect x="20" y="46" width="140" height="22" rx="5" fill="#464eb8"/>
+  <text x="90" y="61" text-anchor="middle" fill="#e0e7ff" font-size="11" font-weight="700">Channel</text>
+  <text x="90" y="96" text-anchor="middle" fill="#a5b4fc" font-size="22">💬</text>
+  <text x="90" y="118" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="600">Slack / Teams / CLI</text>
+  <text x="90" y="134" text-anchor="middle" fill="#475569" font-size="9">User sends a message</text>
+  <text x="90" y="148" text-anchor="middle" fill="#475569" font-size="9">to the bot</text>
+  <text x="90" y="162" text-anchor="middle" fill="#334155" font-size="9" font-style="italic">Socket / HTTP webhook</text>
+
+  <!-- Arrow: Channel → Agent -->
+  <line x1="162" y1="113" x2="197" y2="113" stroke="#6264a7" stroke-width="2"/>
+  <polygon points="195,107 205,113 195,119" fill="#6264a7"/>
+  <text x="183" y="107" text-anchor="middle" fill="#475569" font-size="9">event</text>
+
+  <!-- Agent box -->
+  <rect x="205" y="58" width="200" height="110" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <rect x="205" y="46" width="200" height="22" rx="5" fill="#4338ca"/>
+  <text x="305" y="61" text-anchor="middle" fill="#e0e7ff" font-size="11" font-weight="700">Agent</text>
+  <text x="305" y="96" text-anchor="middle" fill="#a5b4fc" font-size="22">🤖</text>
+  <text x="305" y="118" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="600">Orchestrator</text>
+  <text x="215" y="134" fill="#475569" font-size="9">• Loads AGENTS.md + SOUL.md</text>
+  <text x="215" y="148" fill="#475569" font-size="9">• Loads Skills into context</text>
+  <text x="215" y="162" fill="#475569" font-size="9">• Assembles the LLM prompt</text>
+
+  <!-- Arrow: Agent → LLM -->
+  <line x1="407" y1="113" x2="442" y2="113" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="440,107 450,113 440,119" fill="#6366f1"/>
+  <text x="428" y="107" text-anchor="middle" fill="#475569" font-size="9">prompt</text>
+
+  <!-- LLM box -->
+  <rect x="450" y="58" width="170" height="110" rx="10" fill="#1a0d26" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="450" y="46" width="170" height="22" rx="5" fill="#6d28d9"/>
+  <text x="535" y="61" text-anchor="middle" fill="#ede9fe" font-size="11" font-weight="700">LLM</text>
+  <text x="535" y="96" text-anchor="middle" fill="#c4b5fd" font-size="22">🧠</text>
+  <text x="535" y="118" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="600">Claude / GPT / etc.</text>
+  <text x="460" y="134" fill="#475569" font-size="9">• Reads Skills guidance</text>
+  <text x="460" y="148" fill="#475569" font-size="9">• Decides which tools to call</text>
+  <text x="460" y="162" fill="#475569" font-size="9">• Returns tool_call + text</text>
+
+  <!-- Arrow: LLM → Tools -->
+  <line x1="622" y1="113" x2="657" y2="113" stroke="#8b5cf6" stroke-width="2"/>
+  <polygon points="655,107 665,113 655,119" fill="#8b5cf6"/>
+  <text x="643" y="107" text-anchor="middle" fill="#475569" font-size="9">call</text>
+
+  <!-- Tools execution box -->
+  <rect x="665" y="58" width="215" height="110" rx="10" fill="#071a12" stroke="#10b981" stroke-width="2"/>
+  <rect x="665" y="46" width="215" height="22" rx="5" fill="#065f46"/>
+  <text x="772" y="61" text-anchor="middle" fill="#d1fae5" font-size="11" font-weight="700">Tools (execute)</text>
+  <text x="772" y="96" text-anchor="middle" fill="#6ee7b7" font-size="22">⚙</text>
+  <text x="772" y="118" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Run the action</text>
+  <text x="675" y="134" fill="#475569" font-size="9">exec → shell script</text>
+  <text x="675" y="148" fill="#475569" font-size="9">web_search → search engine</text>
+  <text x="675" y="162" fill="#475569" font-size="9">browser → real browser</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  ROW 2: Tool result → LLM → reply back     -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Down arrow from Tools to result row -->
+  <line x1="772" y1="170" x2="772" y2="210" stroke="#10b981" stroke-width="2"/>
+  <polygon points="766,208 772,218 778,208" fill="#10b981"/>
+  <text x="787" y="196" fill="#10b981" font-size="9">result</text>
+
+  <!-- Tool result box -->
+  <rect x="665" y="218" width="215" height="70" rx="10" fill="#071a12" stroke="#10b981" stroke-width="1.5"/>
+  <text x="772" y="242" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="600">Tool Output</text>
+  <text x="772" y="258" text-anchor="middle" fill="#475569" font-size="9">stdout, search results,</text>
+  <text x="772" y="272" text-anchor="middle" fill="#475569" font-size="9">file contents, etc.</text>
+
+  <!-- Arrow: result → LLM (feedback) -->
+  <line x1="663" y1="253" x2="625" y2="253" stroke="#10b981" stroke-width="1.5"/>
+  <line x1="625" y1="253" x2="625" y2="113" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="619,115 625,105 631,115" fill="#10b981"/>
+  <text x="640" y="246" text-anchor="middle" fill="#065f46" font-size="9">feeds back</text>
+
+  <!-- Arrow: LLM → final reply -->
+  <line x1="450" y1="253" x2="370" y2="253" stroke="#6d28d9" stroke-width="2"/>
+  <polygon points="372,247 362,253 372,259" fill="#6d28d9"/>
+
+  <!-- Reply box -->
+  <rect x="205" y="218" width="145" height="70" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="277" y="242" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="600">Agent formats reply</text>
+  <text x="277" y="258" text-anchor="middle" fill="#475569" font-size="9">Adds markdown,</text>
+  <text x="277" y="272" text-anchor="middle" fill="#475569" font-size="9">threaded replies</text>
+
+  <!-- Arrow: reply → Channel -->
+  <line x1="203" y1="253" x2="163" y2="253" stroke="#4338ca" stroke-width="2"/>
+  <polygon points="165,247 155,253 165,259" fill="#4338ca"/>
+
+  <!-- Reply to channel box -->
+  <rect x="20" y="218" width="140" height="70" rx="10" fill="#1a1230" stroke="#6264a7" stroke-width="1.5"/>
+  <text x="90" y="242" text-anchor="middle" fill="#a5b4fc" font-size="10" font-weight="600">Sent to Channel</text>
+  <text x="90" y="258" text-anchor="middle" fill="#475569" font-size="9">Bot replies in Slack,</text>
+  <text x="90" y="272" text-anchor="middle" fill="#475569" font-size="9">Teams, or CLI</text>
+
+  <!-- LLM result label -->
+  <text x="410" y="248" text-anchor="middle" fill="#475569" font-size="9">final text</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  ROW 3: Skills — feeds into Agent context  -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Skills box at bottom -->
+  <rect x="205" y="318" width="410" height="76" rx="10" fill="#1a0d2e" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="205" y="306" width="410" height="22" rx="5" fill="#5b21b6"/>
+  <text x="410" y="321" text-anchor="middle" fill="#ede9fe" font-size="11" font-weight="700">Skills — SKILL.md files in the workspace</text>
+  <text x="225" y="346" fill="#64748b" font-size="10">• send-email skill  →  teaches exec + python mail script</text>
+  <text x="225" y="362" fill="#64748b" font-size="10">• code-review skill →  teaches how to read PRs with git tools</text>
+  <text x="225" y="378" fill="#64748b" font-size="10">• ClawHub installs   →  community-contributed skill packs</text>
+
+  <!-- Arrow: Skills → Agent (loaded at startup) -->
+  <line x1="305" y1="306" x2="305" y2="170" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="299,172 305,162 311,172" fill="#7c3aed"/>
+  <text x="255" y="244" text-anchor="middle" fill="#7c3aed" font-size="9">loaded into</text>
+  <text x="255" y="255" text-anchor="middle" fill="#7c3aed" font-size="9">LLM context</text>
+
+  <!-- Footer -->
+  <rect x="20" y="400" width="860" height="14" rx="4" fill="#1e293b"/>
+  <text x="450" y="411" text-anchor="middle" fill="#475569" font-size="10">The agent loop runs until the LLM produces a final reply with no more tool calls — Skills guide each decision along the way</text>
+
+</svg>

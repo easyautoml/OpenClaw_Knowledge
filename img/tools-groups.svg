@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="880" height="420" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="440" y="26" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">Tool Groups — What Every Group Can Do</text>
+  <text x="440" y="44" text-anchor="middle" fill="#475569" font-size="11">Enable groups in config — each group unlocks a set of related tools</text>
+
+  <!-- ══ Row 1 ══ -->
+
+  <!-- group:runtime (green) -->
+  <rect x="20" y="58" width="170" height="108" rx="9" fill="#071a12" stroke="#10b981" stroke-width="2"/>
+  <rect x="20" y="46" width="170" height="22" rx="5" fill="#065f46"/>
+  <text x="105" y="61" text-anchor="middle" fill="#d1fae5" font-size="10" font-weight="700">group:runtime</text>
+  <text x="105" y="92" text-anchor="middle" fill="#6ee7b7" font-size="20">💻</text>
+  <text x="105" y="112" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Shell execution</text>
+  <text x="30" y="128" fill="#64748b" font-size="9">exec, bash, process</text>
+  <text x="30" y="142" fill="#64748b" font-size="9">Run any shell command</text>
+  <text x="30" y="156" fill="#475569" font-size="9" font-style="italic">Most powerful group</text>
+
+  <!-- group:fs (amber) -->
+  <rect x="205" y="58" width="170" height="108" rx="9" fill="#1c1408" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="205" y="46" width="170" height="22" rx="5" fill="#b45309"/>
+  <text x="290" y="61" text-anchor="middle" fill="#fef3c7" font-size="10" font-weight="700">group:fs</text>
+  <text x="290" y="92" text-anchor="middle" fill="#fcd34d" font-size="20">📁</text>
+  <text x="290" y="112" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="600">File system</text>
+  <text x="215" y="128" fill="#64748b" font-size="9">read, write, edit, glob, grep</text>
+  <text x="215" y="142" fill="#64748b" font-size="9">Read / write / search files</text>
+  <text x="215" y="156" fill="#475569" font-size="9" font-style="italic">Used by coding skills</text>
+
+  <!-- group:web (sky blue) -->
+  <rect x="390" y="58" width="170" height="108" rx="9" fill="#0c1a2e" stroke="#38bdf8" stroke-width="2"/>
+  <rect x="390" y="46" width="170" height="22" rx="5" fill="#0369a1"/>
+  <text x="475" y="61" text-anchor="middle" fill="#e0f2fe" font-size="10" font-weight="700">group:web</text>
+  <text x="475" y="92" text-anchor="middle" fill="#7dd3fc" font-size="20">🌐</text>
+  <text x="475" y="112" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600">Web access</text>
+  <text x="400" y="128" fill="#64748b" font-size="9">web_search, web_fetch</text>
+  <text x="400" y="142" fill="#64748b" font-size="9">Search + fetch web pages</text>
+  <text x="400" y="156" fill="#475569" font-size="9" font-style="italic">Research and lookup</text>
+
+  <!-- group:ui (pink/rose) -->
+  <rect x="575" y="58" width="170" height="108" rx="9" fill="#1a0a0e" stroke="#f43f5e" stroke-width="2"/>
+  <rect x="575" y="46" width="170" height="22" rx="5" fill="#9f1239"/>
+  <text x="660" y="61" text-anchor="middle" fill="#ffe4e6" font-size="10" font-weight="700">group:ui</text>
+  <text x="660" y="92" text-anchor="middle" fill="#fda4af" font-size="20">🖥</text>
+  <text x="660" y="112" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="600">UI / browser</text>
+  <text x="585" y="128" fill="#64748b" font-size="9">browser, canvas</text>
+  <text x="585" y="142" fill="#64748b" font-size="9">Control real browser UI</text>
+  <text x="585" y="156" fill="#475569" font-size="9" font-style="italic">Web automation / scraping</text>
+
+  <!-- group:messaging (purple) -->
+  <rect x="760" y="58" width="100" height="108" rx="9" fill="#1a0d2e" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="760" y="46" width="100" height="22" rx="5" fill="#5b21b6"/>
+  <text x="810" y="61" text-anchor="middle" fill="#ede9fe" font-size="9" font-weight="700">group:messaging</text>
+  <text x="810" y="92" text-anchor="middle" fill="#c4b5fd" font-size="20">📨</text>
+  <text x="810" y="112" text-anchor="middle" fill="#8b5cf6" font-size="10" font-weight="600">Send replies</text>
+  <text x="767" y="128" fill="#64748b" font-size="9">message tool</text>
+  <text x="767" y="142" fill="#64748b" font-size="9">Post to channel</text>
+  <text x="767" y="156" fill="#475569" font-size="9" font-style="italic">Async replies</text>
+
+  <!-- ══ Row 2 ══ -->
+
+  <!-- group:memory (violet) -->
+  <rect x="20" y="188" width="170" height="108" rx="9" fill="#1a0d2e" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="20" y="176" width="170" height="22" rx="5" fill="#5b21b6"/>
+  <text x="105" y="191" text-anchor="middle" fill="#ede9fe" font-size="10" font-weight="700">group:memory</text>
+  <text x="105" y="222" text-anchor="middle" fill="#c4b5fd" font-size="20">🧠</text>
+  <text x="105" y="242" text-anchor="middle" fill="#7c3aed" font-size="10" font-weight="600">Persistent memory</text>
+  <text x="30" y="258" fill="#64748b" font-size="9">mem_read, mem_write</text>
+  <text x="30" y="272" fill="#64748b" font-size="9">Recall across sessions</text>
+  <text x="30" y="286" fill="#475569" font-size="9" font-style="italic">Vector + hybrid search</text>
+
+  <!-- group:sessions (indigo) -->
+  <rect x="205" y="188" width="170" height="108" rx="9" fill="#1e1b3a" stroke="#6366f1" stroke-width="2"/>
+  <rect x="205" y="176" width="170" height="22" rx="5" fill="#4338ca"/>
+  <text x="290" y="191" text-anchor="middle" fill="#e0e7ff" font-size="10" font-weight="700">group:sessions</text>
+  <text x="290" y="222" text-anchor="middle" fill="#a5b4fc" font-size="20">📋</text>
+  <text x="290" y="242" text-anchor="middle" fill="#6366f1" font-size="10" font-weight="600">Session access</text>
+  <text x="215" y="258" fill="#64748b" font-size="9">session_read, list</text>
+  <text x="215" y="272" fill="#64748b" font-size="9">Read past conversations</text>
+  <text x="215" y="286" fill="#475569" font-size="9" font-style="italic">Cross-session context</text>
+
+  <!-- group:automation (orange) -->
+  <rect x="390" y="188" width="170" height="108" rx="9" fill="#1a0e00" stroke="#f97316" stroke-width="2"/>
+  <rect x="390" y="176" width="170" height="22" rx="5" fill="#c2410c"/>
+  <text x="475" y="191" text-anchor="middle" fill="#ffedd5" font-size="10" font-weight="700">group:automation</text>
+  <text x="475" y="222" text-anchor="middle" fill="#fdba74" font-size="20">⏰</text>
+  <text x="475" y="242" text-anchor="middle" fill="#f97316" font-size="10" font-weight="600">Scheduled tasks</text>
+  <text x="400" y="258" fill="#64748b" font-size="9">cron, gateway control</text>
+  <text x="400" y="272" fill="#64748b" font-size="9">Schedule recurring jobs</text>
+  <text x="400" y="286" fill="#475569" font-size="9" font-style="italic">at / every / cron syntax</text>
+
+  <!-- group:nodes (teal) -->
+  <rect x="575" y="188" width="170" height="108" rx="9" fill="#071a1a" stroke="#14b8a6" stroke-width="2"/>
+  <rect x="575" y="176" width="170" height="22" rx="5" fill="#0f766e"/>
+  <text x="660" y="191" text-anchor="middle" fill="#ccfbf1" font-size="10" font-weight="700">group:nodes</text>
+  <text x="660" y="222" text-anchor="middle" fill="#5eead4" font-size="20">🔀</text>
+  <text x="660" y="242" text-anchor="middle" fill="#14b8a6" font-size="10" font-weight="600">Multi-agent</text>
+  <text x="585" y="258" fill="#64748b" font-size="9">spawn, delegate, message</text>
+  <text x="585" y="272" fill="#64748b" font-size="9">Coordinate sub-agents</text>
+  <text x="585" y="286" fill="#475569" font-size="9" font-style="italic">Parallel task execution</text>
+
+  <!-- ══ Profiles footer ══ -->
+  <rect x="20" y="314" width="840" height="86" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="440" y="334" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700">Built-in Tool Profiles — Quick Combinations</text>
+
+  <rect x="36" y="344" width="180" height="46" rx="6" fill="#0f1117"/>
+  <text x="126" y="359" text-anchor="middle" fill="#64748b" font-size="10" font-weight="600">minimal</text>
+  <text x="126" y="374" text-anchor="middle" fill="#475569" font-size="9">message only</text>
+  <text x="126" y="387" text-anchor="middle" fill="#334155" font-size="9">Read-only, safe</text>
+
+  <rect x="228" y="344" width="180" height="46" rx="6" fill="#0f1117"/>
+  <text x="318" y="359" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="600">coding</text>
+  <text x="318" y="374" text-anchor="middle" fill="#475569" font-size="9">fs + runtime + web</text>
+  <text x="318" y="387" text-anchor="middle" fill="#334155" font-size="9">Write, run, search</text>
+
+  <rect x="420" y="344" width="180" height="46" rx="6" fill="#0f1117"/>
+  <text x="510" y="359" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600">messaging</text>
+  <text x="510" y="374" text-anchor="middle" fill="#475569" font-size="9">messaging + memory</text>
+  <text x="510" y="387" text-anchor="middle" fill="#334155" font-size="9">Reply + remember</text>
+
+  <rect x="612" y="344" width="232" height="46" rx="6" fill="#0f1117"/>
+  <text x="728" y="359" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">full</text>
+  <text x="728" y="374" text-anchor="middle" fill="#475569" font-size="9">all groups enabled</text>
+  <text x="728" y="387" text-anchor="middle" fill="#334155" font-size="9">Everything — use with care</text>
+
+</svg>

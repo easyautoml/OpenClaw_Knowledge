@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="620" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">How the 4 Setup Methods Relate to Each Other</text>
+  <text x="450" y="58" text-anchor="middle" fill="#475569" font-size="11">What each method writes, and how OpenClaw loads everything at runtime</text>
+
+  <!-- ══════════════════════════════════════════
+       COLUMN HEADERS
+  ══════════════════════════════════════════ -->
+  <text x="120" y="88" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1">SETUP METHODS</text>
+  <text x="450" y="88" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1">STORED FILES</text>
+  <text x="770" y="88" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="1">RUNTIME (at startup)</text>
+
+  <!-- Column dividers -->
+  <line x1="270" y1="70" x2="270" y2="590" stroke="#1e293b" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="610" y1="70" x2="610" y2="590" stroke="#1e293b" stroke-width="1" stroke-dasharray="4,4"/>
+
+
+  <!-- ══════════════════════════════════════════
+       LEFT COLUMN — Setup Methods
+  ══════════════════════════════════════════ -->
+
+  <!-- 1. Wizard -->
+  <rect x="20" y="104" width="200" height="68" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="120" y="126" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="700">Wizard</text>
+  <text x="120" y="143" text-anchor="middle" fill="#94a3b8" font-size="10">openclaw onboard</text>
+  <text x="120" y="160" text-anchor="middle" fill="#475569" font-size="10">Interactive prompts, step-by-step</text>
+
+  <!-- 2. Non-interactive CLI -->
+  <rect x="20" y="196" width="200" height="68" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="120" y="218" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="700">Non-interactive CLI</text>
+  <text x="120" y="235" text-anchor="middle" fill="#94a3b8" font-size="10">openclaw onboard --non-interactive</text>
+  <text x="120" y="252" text-anchor="middle" fill="#475569" font-size="10">All values passed as flags</text>
+
+  <!-- 3. .env file -->
+  <rect x="20" y="310" width="200" height="68" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="120" y="332" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="700">.env File</text>
+  <text x="120" y="349" text-anchor="middle" fill="#94a3b8" font-size="10">./.env  or  ~/.openclaw/.env</text>
+  <text x="120" y="366" text-anchor="middle" fill="#475569" font-size="10">API keys as environment variables</text>
+
+  <!-- 4. Manual config edit -->
+  <rect x="20" y="402" width="200" height="68" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="120" y="424" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">Edit Config Directly</text>
+  <text x="120" y="441" text-anchor="middle" fill="#94a3b8" font-size="10">~/.openclaw/openclaw.json</text>
+  <text x="120" y="458" text-anchor="middle" fill="#475569" font-size="10">Hand-edit provider settings</text>
+
+
+  <!-- ══════════════════════════════════════════
+       MIDDLE COLUMN — Stored Files
+  ══════════════════════════════════════════ -->
+
+  <!-- openclaw.json -->
+  <rect x="300" y="144" width="220" height="72" rx="10" fill="#1a1f2e" stroke="#3b82f6" stroke-width="2"/>
+  <text x="316" y="166" fill="#60a5fa" font-size="18">📄</text>
+  <text x="346" y="165" fill="#93c5fd" font-size="12" font-weight="700">openclaw.json</text>
+  <text x="346" y="182" fill="#94a3b8" font-size="10">Provider configs, model lists,</text>
+  <text x="346" y="196" fill="#94a3b8" font-size="10">channel settings, default model</text>
+  <text x="346" y="210" fill="#334155" font-size="10" font-style="italic">~/.openclaw/openclaw.json</text>
+
+  <!-- auth-profiles.json -->
+  <rect x="300" y="254" width="220" height="72" rx="10" fill="#1a1f2e" stroke="#ec4899" stroke-width="2"/>
+  <text x="316" y="276" fill="#f472b6" font-size="18">🔐</text>
+  <text x="346" y="275" fill="#f9a8d4" font-size="12" font-weight="700">auth-profiles.json</text>
+  <text x="346" y="292" fill="#94a3b8" font-size="10">Saved API keys and OAuth tokens</text>
+  <text x="346" y="306" fill="#94a3b8" font-size="10">keyed by provider name</text>
+  <text x="346" y="320" fill="#334155" font-size="10" font-style="italic">~/.openclaw/auth-profiles.json</text>
+
+  <!-- .env file (storage) -->
+  <rect x="300" y="364" width="220" height="72" rx="10" fill="#1a1f2e" stroke="#f59e0b" stroke-width="2"/>
+  <text x="316" y="386" fill="#fbbf24" font-size="18">🗂</text>
+  <text x="346" y="385" fill="#fcd34d" font-size="12" font-weight="700">.env  /  ~/.openclaw/.env</text>
+  <text x="346" y="402" fill="#94a3b8" font-size="10">Raw key=value pairs loaded into</text>
+  <text x="346" y="416" fill="#94a3b8" font-size="10">process.env at startup</text>
+  <text x="346" y="430" fill="#334155" font-size="10" font-style="italic">Existing env vars are never overridden</text>
+
+
+  <!-- ══════════════════════════════════════════
+       RIGHT COLUMN — Runtime
+  ══════════════════════════════════════════ -->
+
+  <!-- Runtime merge box -->
+  <rect x="638" y="104" width="240" height="380" rx="12" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+  <text x="758" y="128" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="700">OpenClaw Startup</text>
+
+  <!-- Step R1 -->
+  <rect x="652" y="140" width="212" height="42" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="758" y="157" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">1. Load .env files</text>
+  <text x="758" y="173" text-anchor="middle" fill="#64748b" font-size="10">populate process.env</text>
+
+  <!-- Step R2 -->
+  <rect x="652" y="196" width="212" height="42" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="758" y="213" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">2. Read openclaw.json</text>
+  <text x="758" y="229" text-anchor="middle" fill="#64748b" font-size="10">parse provider + channel config</text>
+
+  <!-- Step R3 -->
+  <rect x="652" y="252" width="212" height="42" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="758" y="269" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="600">3. Resolve env var references</text>
+  <text x="758" y="285" text-anchor="middle" fill="#64748b" font-size="10">apiKey: "OPENAI_API_KEY" → actual value</text>
+
+  <!-- Step R4 -->
+  <rect x="652" y="308" width="212" height="42" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="758" y="325" text-anchor="middle" fill="#f9a8d4" font-size="11" font-weight="600">4. Load auth-profiles.json</text>
+  <text x="758" y="341" text-anchor="middle" fill="#64748b" font-size="10">merge saved keys into providers</text>
+
+  <!-- Step R5 -->
+  <rect x="652" y="364" width="212" height="42" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="758" y="381" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="600">5. Auto-discover local services</text>
+  <text x="758" y="397" text-anchor="middle" fill="#64748b" font-size="10">detect Ollama, vLLM, Bedrock…</text>
+
+  <!-- Arrow down inside runtime box -->
+  <line x1="758" y1="182" x2="758" y2="196" stroke="#334155" stroke-width="1.5"/>
+  <line x1="758" y1="238" x2="758" y2="252" stroke="#334155" stroke-width="1.5"/>
+  <line x1="758" y1="294" x2="758" y2="308" stroke="#334155" stroke-width="1.5"/>
+  <line x1="758" y1="350" x2="758" y2="364" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="753,362 758,369 763,362" fill="#334155"/>
+
+  <!-- Result box -->
+  <rect x="652" y="424" width="212" height="46" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="758" y="443" text-anchor="middle" fill="#bbf7d0" font-size="12" font-weight="700">Active Providers Ready</text>
+  <text x="758" y="460" text-anchor="middle" fill="#86efac" font-size="10">LLM services live and selected</text>
+
+  <!-- Arrow from step 5 to result -->
+  <line x1="758" y1="406" x2="758" y2="424" stroke="#22c55e" stroke-width="1.5"/>
+  <polygon points="753,422 758,429 763,422" fill="#22c55e"/>
+
+
+  <!-- ══════════════════════════════════════════
+       ARROWS — Left to Middle
+  ══════════════════════════════════════════ -->
+
+  <!-- Wizard → openclaw.json -->
+  <line x1="220" y1="130" x2="298" y2="170" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arr-indigo)"/>
+  <!-- Wizard → auth-profiles.json -->
+  <line x1="220" y1="148" x2="298" y2="272" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-indigo)"/>
+
+  <!-- CLI → openclaw.json -->
+  <line x1="220" y1="220" x2="298" y2="182" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arr-violet)"/>
+  <!-- CLI → auth-profiles.json -->
+  <line x1="220" y1="240" x2="298" y2="278" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-violet)"/>
+
+  <!-- .env → .env file box -->
+  <line x1="220" y1="344" x2="298" y2="392" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+
+  <!-- Manual edit → openclaw.json -->
+  <line x1="220" y1="430" x2="298" y2="198" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-green)"/>
+
+
+  <!-- ══════════════════════════════════════════
+       ARROWS — Middle to Right
+  ══════════════════════════════════════════ -->
+
+  <!-- openclaw.json → runtime step 2 -->
+  <line x1="520" y1="180" x2="636" y2="217" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <!-- auth-profiles.json → runtime step 4 -->
+  <line x1="520" y1="290" x2="636" y2="329" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arr-pink)"/>
+
+  <!-- .env → runtime step 1 -->
+  <line x1="520" y1="386" x2="636" y2="165" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-amber)"/>
+
+
+  <!-- ══════════════════════════════════════════
+       LEGEND — note on dashed lines
+  ══════════════════════════════════════════ -->
+  <rect x="20" y="520" width="560" height="52" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <line x1="38" y1="542" x2="72" y2="542" stroke="#64748b" stroke-width="1.5"/>
+  <text x="80" y="546" fill="#64748b" font-size="11">solid arrow = writes the file</text>
+  <line x1="38" y1="562" x2="72" y2="562" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="80" y="566" fill="#64748b" font-size="11">dashed arrow = also writes / depends on</text>
+
+  <rect x="230" y="533" width="1" height="1" fill="none"/>
+  <text x="290" y="546" fill="#475569" font-size="11">openclaw.json stores env var <tspan font-weight="700" fill="#93c5fd">names</tspan>, not values</text>
+  <text x="290" y="562" fill="#475569" font-size="11">actual key values resolved from .env at runtime (step 3)</text>
+
+
+  <!-- ══════════════════════════════════════════
+       ARROWHEAD MARKERS
+  ══════════════════════════════════════════ -->
+  <defs>
+    <marker id="arr-indigo" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arr-violet" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#10b981"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-pink" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ec4899"/>
+    </marker>
+  </defs>
+
+</svg>

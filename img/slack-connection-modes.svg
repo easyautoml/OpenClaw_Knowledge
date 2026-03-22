@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="380" viewBox="0 0 820 380" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="380" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="410" y="28" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">Two Ways to Connect Slack to OpenClaw</text>
+  <text x="410" y="46" text-anchor="middle" fill="#475569" font-size="11">Choose Socket Mode if you run OpenClaw at home — choose HTTP Mode if you have a public server with HTTPS</text>
+
+  <!-- ══════════════════════════════════════
+       PANEL 1 — Socket Mode (left)
+  ══════════════════════════════════════ -->
+  <rect x="14" y="60" width="388" height="294" rx="12" fill="#071a0e" stroke="#22c55e" stroke-width="2"/>
+  <rect x="14" y="48" width="280" height="24" rx="6" fill="#065f46"/>
+  <text x="22" y="65" fill="#d1fae5" font-size="11" font-weight="700">Mode 1 — Socket Mode</text>
+  <rect x="310" y="48" width="90" height="24" rx="6" fill="#14532d"/>
+  <text x="355" y="65" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700">★ Default</text>
+
+  <!-- OpenClaw box -->
+  <rect x="30" y="82" width="138" height="54" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="99" y="104" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="600">⚙ OpenClaw</text>
+  <text x="99" y="122" text-anchor="middle" fill="#475569" font-size="10">your machine</text>
+
+  <!-- Arrow: OpenClaw → Slack (WebSocket, OpenClaw initiates) -->
+  <line x1="170" y1="109" x2="232" y2="109" stroke="#22c55e" stroke-width="2"/>
+  <polygon points="230,103 240,109 230,115" fill="#22c55e"/>
+  <text x="200" y="101" text-anchor="middle" fill="#6ee7b7" font-size="9" font-weight="600">WebSocket</text>
+  <text x="200" y="124" text-anchor="middle" fill="#475569" font-size="9">(OpenClaw connects out)</text>
+
+  <!-- Slack box -->
+  <rect x="242" y="82" width="138" height="54" rx="8" fill="#1a1208" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="311" y="104" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">💬 Slack</text>
+  <text x="311" y="122" text-anchor="middle" fill="#475569" font-size="10">slack.com servers</text>
+
+  <!-- Events flow label -->
+  <text x="205" y="154" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">Events stream through the WebSocket connection</text>
+  <text x="205" y="168" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">Replies go back via Slack Web API (Bot Token)</text>
+
+  <!-- Tokens needed -->
+  <rect x="30" y="184" width="360" height="22" rx="5" fill="#0a2117"/>
+  <text x="50" y="199" fill="#6ee7b7" font-size="10" font-weight="700">Bot Token (xoxb-)</text>
+  <text x="210" y="199" fill="#475569" font-size="10">send messages &amp; API calls</text>
+
+  <rect x="30" y="212" width="360" height="22" rx="5" fill="#0a2117"/>
+  <text x="50" y="227" fill="#6ee7b7" font-size="10" font-weight="700">App Token (xapp-)</text>
+  <text x="210" y="227" fill="#475569" font-size="10">open the WebSocket connection</text>
+
+  <!-- Requirements -->
+  <rect x="30" y="248" width="360" height="52" rx="8" fill="#052e16" stroke="#166534" stroke-width="1"/>
+  <text x="50" y="268" fill="#4ade80" font-size="10" font-weight="700">✓  No public URL needed</text>
+  <text x="50" y="284" fill="#4ade80" font-size="10" font-weight="700">✓  Works behind NAT / firewall</text>
+  <text x="50" y="300" fill="#4ade80" font-size="10" font-weight="700">✓  Persistent connection — low latency</text>
+
+  <!-- ══════════════════════════════════════
+       PANEL 2 — HTTP Mode (right)
+  ══════════════════════════════════════ -->
+  <rect x="418" y="60" width="388" height="294" rx="12" fill="#0f1b2d" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="418" y="48" width="280" height="24" rx="6" fill="#1d4ed8"/>
+  <text x="426" y="65" fill="#bfdbfe" font-size="11" font-weight="700">Mode 2 — HTTP Mode (Webhooks)</text>
+
+  <!-- Slack box (events originate from Slack) -->
+  <rect x="434" y="82" width="138" height="54" rx="8" fill="#1a1208" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="503" y="104" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">💬 Slack</text>
+  <text x="503" y="122" text-anchor="middle" fill="#475569" font-size="10">slack.com servers</text>
+
+  <!-- Arrow: Slack → OpenClaw (HTTPS POST) -->
+  <line x1="574" y1="109" x2="636" y2="109" stroke="#3b82f6" stroke-width="2"/>
+  <polygon points="634,103 644,109 634,115" fill="#3b82f6"/>
+  <text x="609" y="101" text-anchor="middle" fill="#93c5fd" font-size="9" font-weight="600">HTTPS POST</text>
+  <text x="609" y="124" text-anchor="middle" fill="#475569" font-size="9">(Slack sends to your URL)</text>
+
+  <!-- OpenClaw box -->
+  <rect x="646" y="82" width="138" height="54" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="715" y="100" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="600">⚙ OpenClaw</text>
+  <text x="715" y="116" text-anchor="middle" fill="#475569" font-size="10">your server</text>
+  <text x="715" y="130" text-anchor="middle" fill="#64748b" font-size="9">/slack/events</text>
+
+  <!-- Events flow label -->
+  <text x="609" y="154" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">Slack POSTs each event to your endpoint</text>
+  <text x="609" y="168" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">Replies go back via Slack Web API (Bot Token)</text>
+
+  <!-- Tokens needed -->
+  <rect x="434" y="184" width="360" height="22" rx="5" fill="#0f1b2d" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="454" y="199" fill="#93c5fd" font-size="10" font-weight="700">Bot Token (xoxb-)</text>
+  <text x="614" y="199" fill="#475569" font-size="10">send messages &amp; API calls</text>
+
+  <rect x="434" y="212" width="360" height="22" rx="5" fill="#0f1b2d" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="454" y="227" fill="#93c5fd" font-size="10" font-weight="700">Signing Secret</text>
+  <text x="614" y="227" fill="#475569" font-size="10">verify events come from Slack</text>
+
+  <!-- Requirements -->
+  <rect x="434" y="248" width="360" height="52" rx="8" fill="#1a1208" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="454" y="268" fill="#f87171" font-size="10" font-weight="700">⚠  Requires a public HTTPS URL</text>
+  <text x="454" y="284" fill="#f87171" font-size="10" font-weight="700">⚠  Or use a tunnel (ngrok, Cloudflare)</text>
+  <text x="454" y="300" fill="#6ee7b7" font-size="10" font-weight="700">✓  Good for cloud / production servers</text>
+
+  <!-- Footer comparison row -->
+  <rect x="14" y="362" width="792" height="14" rx="4" fill="#1e293b"/>
+  <text x="410" y="373" text-anchor="middle" fill="#475569" font-size="10">Set mode in config: "channels": &#123; "slack": &#123; "mode": "socket" &#125; &#125;  or  "mode": "http" — default is socket</text>
+
+</svg>

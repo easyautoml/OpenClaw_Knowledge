@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="440" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">Connect OpenClaw to LiteLLM</text>
+  <text x="450" y="58" text-anchor="middle" fill="#64748b" font-size="12">Point OpenClaw at your LiteLLM proxy — it looks just like any OpenAI-compatible server</text>
+
+  <!-- ═══════════════════════════════════════
+       LEFT PANEL — OpenClaw config
+  ═══════════════════════════════════════ -->
+  <rect x="30" y="78" width="390" height="320" rx="14" fill="#0d1526" stroke="#3b82f6" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="30" y="78" width="390" height="44" rx="14" fill="#1d4ed8"/>
+  <rect x="30" y="106" width="390" height="16" fill="#1d4ed8"/>
+  <text x="225" y="106" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">OpenClaw — openclaw.json</text>
+  <text x="225" y="122" text-anchor="middle" fill="#bfdbfe" font-size="10">~/.openclaw/openclaw.json</text>
+
+  <!-- Code block -->
+  <rect x="46" y="136" width="358" height="244" rx="8" fill="#060d1a" stroke="#1e3a5f" stroke-width="1"/>
+
+  <text x="58" y="158" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">{</text>
+  <text x="58" y="174" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">  "models": {</text>
+  <text x="58" y="190" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">    "providers": {</text>
+  <text x="58" y="206" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">      "azure-via-litellm": {</text>
+
+  <text x="58" y="222" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">        "baseUrl": "</text>
+  <text x="153" y="222" fill="#60a5fa" font-size="9" font-family="'Courier New', monospace">http://localhost:4000</text>
+  <text x="295" y="222" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">",</text>
+
+  <text x="58" y="238" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">        "api": "</text>
+  <text x="120" y="238" fill="#60a5fa" font-size="9" font-family="'Courier New', monospace">openai-completions</text>
+  <text x="240" y="238" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">",</text>
+
+  <text x="58" y="254" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">        "apiKey": "</text>
+  <text x="132" y="254" fill="#60a5fa" font-size="9" font-family="'Courier New', monospace">LITELLM_API_KEY</text>
+  <text x="232" y="254" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">",</text>
+
+  <text x="58" y="270" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">        "models": [</text>
+  <text x="58" y="286" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">          { "id": "</text>
+  <text x="140" y="286" fill="#86efac" font-size="9" font-family="'Courier New', monospace">gpt-4o</text>
+  <text x="185" y="286" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">", "name": "GPT-4o via Azure" },</text>
+  <text x="58" y="302" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">          { "id": "</text>
+  <text x="140" y="302" fill="#86efac" font-size="9" font-family="'Courier New', monospace">gpt-4o-mini</text>
+  <text x="202" y="302" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">", "name": "GPT-4o Mini" }</text>
+  <text x="58" y="318" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">        ]</text>
+  <text x="58" y="334" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">      }</text>
+  <text x="58" y="350" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">    }</text>
+  <text x="58" y="366" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">  }</text>
+  <text x="58" y="374" fill="#4b5563" font-size="9" font-family="'Courier New', monospace">}</text>
+
+  <!-- ═══════════════════════════
+       CENTER ARROW + LiteLLM bubble
+  ═══════════════════════════ -->
+  <line x1="420" y1="238" x2="480" y2="238" stroke="#3b82f6" stroke-width="2.5"/>
+  <polygon points="474,232 486,238 474,244" fill="#3b82f6"/>
+
+  <!-- LiteLLM port indicator -->
+  <rect x="400" y="290" width="100" height="30" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="450" y="308" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="700">:4000</text>
+
+  <!-- ═══════════════════════════════════════
+       RIGHT PANEL — LiteLLM running
+  ═══════════════════════════════════════ -->
+  <rect x="490" y="78" width="380" height="320" rx="14" fill="#1a1200" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="490" y="78" width="380" height="44" rx="14" fill="#b45309"/>
+  <rect x="490" y="106" width="380" height="16" fill="#b45309"/>
+  <text x="680" y="106" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">LiteLLM Proxy</text>
+  <text x="680" y="122" text-anchor="middle" fill="#fef3c7" font-size="10">Running at http://localhost:4000</text>
+
+  <!-- Status indicators -->
+  <rect x="508" y="140" width="344" height="40" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+  <circle cx="528" cy="160" r="6" fill="#22c55e"/>
+  <text x="680" y="164" text-anchor="middle" fill="#86efac" font-size="11" font-weight="600">Proxy running — accepting requests</text>
+
+  <!-- Routing info -->
+  <text x="680" y="206" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">Routes incoming requests to Azure:</text>
+
+  <!-- Route chips -->
+  <rect x="510" y="216" width="344" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="522" y="234" fill="#fbbf24" font-size="10" font-family="'Courier New', monospace">gpt-4o</text>
+  <text x="610" y="234" fill="#64748b" font-size="9">→</text>
+  <text x="624" y="234" fill="#a5f3fc" font-size="9" font-family="'Courier New', monospace">azure/my-gpt4o-deployment</text>
+
+  <rect x="510" y="252" width="344" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="522" y="270" fill="#fbbf24" font-size="10" font-family="'Courier New', monospace">gpt-4o-mini</text>
+  <text x="620" y="270" fill="#64748b" font-size="9">→</text>
+  <text x="634" y="270" fill="#a5f3fc" font-size="9" font-family="'Courier New', monospace">azure/my-mini-deployment</text>
+
+  <!-- Features active -->
+  <text x="680" y="306" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">Active Controls</text>
+
+  <rect x="510" y="314" width="100" height="24" rx="6" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="560" y="330" text-anchor="middle" fill="#fbbf24" font-size="9">Rate Limiting</text>
+
+  <rect x="620" y="314" width="110" height="24" rx="6" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="675" y="330" text-anchor="middle" fill="#fbbf24" font-size="9">Cost Tracking</text>
+
+  <rect x="740" y="314" width="100" height="24" rx="6" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="790" y="330" text-anchor="middle" fill="#fbbf24" font-size="9">Audit Logs</text>
+
+  <rect x="510" y="346" width="100" height="24" rx="6" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="560" y="362" text-anchor="middle" fill="#fbbf24" font-size="9">Token Quotas</text>
+
+  <rect x="620" y="346" width="110" height="24" rx="6" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="675" y="362" text-anchor="middle" fill="#fbbf24" font-size="9">Virtual API Keys</text>
+
+  <rect x="740" y="346" width="100" height="24" rx="6" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="790" y="362" text-anchor="middle" fill="#fbbf24" font-size="9">Dashboard UI</text>
+
+  <!-- Dashboard link -->
+  <rect x="560" y="378" width="240" height="24" rx="8" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="680" y="394" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">Dashboard: http://localhost:4000</text>
+
+  <!-- ═══════════════════════════
+       BOTTOM — CLI ALTERNATIVE
+  ═══════════════════════════ -->
+  <rect x="30" y="414" width="840" height="18" rx="6" fill="#111827"/>
+  <text x="450" y="427" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — Connect to LiteLLM</text>
+
+</svg>

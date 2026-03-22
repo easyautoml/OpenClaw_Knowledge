@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="860" height="420" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="430" y="36" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">Check Gateway Health</text>
+  <text x="430" y="56" text-anchor="middle" fill="#64748b" font-size="12">Three commands — from quick status to deep live probe</text>
+
+  <!-- ═══ CARD 1: gateway status ═══ -->
+  <rect x="30" y="74" width="254" height="300" rx="12" fill="#0d1526" stroke="#3b82f6" stroke-width="2"/>
+  <!-- header -->
+  <rect x="30" y="74" width="254" height="44" rx="12" fill="#1d4ed8"/>
+  <rect x="30" y="102" width="254" height="16" fill="#1d4ed8"/>
+  <text x="157" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">gateway status</text>
+  <text x="157" y="116" text-anchor="middle" fill="#bfdbfe" font-size="9">Service + optional RPC probe</text>
+
+  <!-- command -->
+  <rect x="46" y="130" width="222" height="26" rx="6" fill="#060d1a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="62" y="147" fill="#60a5fa" font-size="10" font-family="'Courier New', monospace">openclaw gateway status</text>
+
+  <!-- what it shows -->
+  <text x="46" y="178" fill="#64748b" font-size="10" font-weight="600">What it shows:</text>
+
+  <rect x="46" y="186" width="222" height="22" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="157" y="201" text-anchor="middle" fill="#93c5fd" font-size="9">Service installed?  running/stopped</text>
+
+  <rect x="46" y="214" width="222" height="22" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="157" y="229" text-anchor="middle" fill="#93c5fd" font-size="9">Port it is listening on</text>
+
+  <rect x="46" y="242" width="222" height="22" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="157" y="257" text-anchor="middle" fill="#93c5fd" font-size="9">RPC reachability (optional)</text>
+
+  <!-- use case -->
+  <rect x="46" y="276" width="222" height="40" rx="6" fill="#1e1b3a" stroke="#4338ca" stroke-width="1"/>
+  <text x="157" y="292" text-anchor="middle" fill="#818cf8" font-size="9" font-weight="600">Use when:</text>
+  <text x="157" y="308" text-anchor="middle" fill="#64748b" font-size="9">Quick daily check if service is up</text>
+
+  <text x="46" y="354" fill="#475569" font-size="9">Add --json for scripting or CI/CD</text>
+
+  <!-- ═══ CARD 2: gateway health ═══ -->
+  <rect x="303" y="74" width="254" height="300" rx="12" fill="#1a0d26" stroke="#a855f7" stroke-width="2"/>
+  <!-- header -->
+  <rect x="303" y="74" width="254" height="44" rx="12" fill="#7e22ce"/>
+  <rect x="303" y="102" width="254" height="16" fill="#7e22ce"/>
+  <text x="430" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">gateway health</text>
+  <text x="430" y="116" text-anchor="middle" fill="#e9d5ff" font-size="9">Live WebSocket RPC health check</text>
+
+  <!-- command -->
+  <rect x="319" y="130" width="222" height="38" rx="6" fill="#0d0618" stroke="#2d1a3d" stroke-width="1"/>
+  <text x="335" y="147" fill="#c084fc" font-size="10" font-family="'Courier New', monospace">openclaw gateway health \</text>
+  <text x="335" y="163" fill="#c084fc" font-size="10" font-family="'Courier New', monospace">  --url ws://127.0.0.1:18789</text>
+
+  <!-- what it shows -->
+  <text x="319" y="192" fill="#64748b" font-size="10" font-weight="600">What it shows:</text>
+
+  <rect x="319" y="200" width="222" height="22" rx="6" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="430" y="215" text-anchor="middle" fill="#d8b4fe" font-size="9">WebSocket connection result</text>
+
+  <rect x="319" y="228" width="222" height="22" rx="6" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="430" y="243" text-anchor="middle" fill="#d8b4fe" font-size="9">Gateway process uptime + version</text>
+
+  <rect x="319" y="256" width="222" height="22" rx="6" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="430" y="271" text-anchor="middle" fill="#d8b4fe" font-size="9">Auth validation result</text>
+
+  <!-- use case -->
+  <rect x="319" y="290" width="222" height="40" rx="6" fill="#1e1b3a" stroke="#4338ca" stroke-width="1"/>
+  <text x="430" y="306" text-anchor="middle" fill="#818cf8" font-size="9" font-weight="600">Use when:</text>
+  <text x="430" y="322" text-anchor="middle" fill="#64748b" font-size="9">Testing if a specific URL is reachable</text>
+
+  <text x="319" y="354" fill="#475569" font-size="9">Works for remote URLs too (wss://...)</text>
+
+  <!-- ═══ CARD 3: gateway probe ═══ -->
+  <rect x="576" y="74" width="254" height="300" rx="12" fill="#0a1f14" stroke="#22c55e" stroke-width="2"/>
+  <!-- header -->
+  <rect x="576" y="74" width="254" height="44" rx="12" fill="#14532d"/>
+  <rect x="576" y="102" width="254" height="16" fill="#14532d"/>
+  <text x="703" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">gateway probe</text>
+  <text x="703" y="116" text-anchor="middle" fill="#bbf7d0" font-size="9">"Debug everything" — checks all targets</text>
+
+  <!-- command -->
+  <rect x="592" y="130" width="222" height="26" rx="6" fill="#030a05" stroke="#14291e" stroke-width="1"/>
+  <text x="608" y="147" fill="#4ade80" font-size="10" font-family="'Courier New', monospace">openclaw gateway probe</text>
+
+  <!-- what it shows -->
+  <text x="592" y="178" fill="#64748b" font-size="10" font-weight="600">What it shows:</text>
+
+  <rect x="592" y="186" width="222" height="22" rx="6" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="703" y="201" text-anchor="middle" fill="#86efac" font-size="9">Local (loopback) gateway result</text>
+
+  <rect x="592" y="214" width="222" height="22" rx="6" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="703" y="229" text-anchor="middle" fill="#86efac" font-size="9">Remote gateway result (if configured)</text>
+
+  <rect x="592" y="242" width="222" height="22" rx="6" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="703" y="257" text-anchor="middle" fill="#86efac" font-size="9">Reachable: yes/no + scope limits</text>
+
+  <!-- use case -->
+  <rect x="592" y="276" width="222" height="40" rx="6" fill="#052e16" stroke="#166534" stroke-width="1"/>
+  <text x="703" y="292" text-anchor="middle" fill="#86efac" font-size="9" font-weight="600">Use when:</text>
+  <text x="703" y="308" text-anchor="middle" fill="#64748b" font-size="9">Debugging connectivity issues</text>
+
+  <text x="592" y="354" fill="#475569" font-size="9">Add --json for machine-readable output</text>
+
+  <!-- ═══ BOTTOM — doctor ═══ -->
+  <rect x="30" y="386" width="800" height="24" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="84" y="403" fill="#64748b" font-size="10">Full system check including gateway:</text>
+  <text x="280" y="403" fill="#fbbf24" font-size="10" font-family="'Courier New', monospace">openclaw doctor</text>
+  <text x="420" y="403" fill="#475569" font-size="10">— scans config, auth, channels, models, and gateway health in one pass</text>
+
+</svg>

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="960" height="520" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="480" y="36" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">The Gateway — OpenClaw's Central Hub</text>
+  <text x="480" y="56" text-anchor="middle" fill="#64748b" font-size="12">Everything flows through the Gateway: channels in, agents out, Control UI, sessions, hooks</text>
+
+  <!-- ═══════════════════════════════
+       CENTER — Gateway box
+  ═══════════════════════════════ -->
+  <rect x="336" y="180" width="288" height="200" rx="16" fill="#1a1200" stroke="#f59e0b" stroke-width="2.5"/>
+  <!-- inner glow -->
+  <rect x="346" y="190" width="268" height="180" rx="12" fill="#271f0a" stroke="#d97706" stroke-width="1"/>
+
+  <text x="480" y="218" text-anchor="middle" fill="#fbbf24" font-size="15" font-weight="700">Gateway</text>
+  <text x="480" y="236" text-anchor="middle" fill="#78716c" font-size="10">WebSocket + HTTP server</text>
+  <text x="480" y="252" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">ws://127.0.0.1:18789</text>
+
+  <!-- inner feature chips -->
+  <rect x="358" y="262" width="116" height="22" rx="8" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="416" y="277" text-anchor="middle" fill="#fcd34d" font-size="9">Sessions</text>
+
+  <rect x="486" y="262" width="116" height="22" rx="8" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="544" y="277" text-anchor="middle" fill="#fcd34d" font-size="9">Hooks</text>
+
+  <rect x="358" y="292" width="116" height="22" rx="8" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="416" y="307" text-anchor="middle" fill="#fcd34d" font-size="9">Channel Health</text>
+
+  <rect x="486" y="292" width="116" height="22" rx="8" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="544" y="307" text-anchor="middle" fill="#fcd34d" font-size="9">Boot Runner</text>
+
+  <rect x="358" y="322" width="244" height="22" rx="8" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="480" y="337" text-anchor="middle" fill="#fcd34d" font-size="9">Control UI  (same port, HTTP)</text>
+
+  <rect x="358" y="350" width="244" height="18" rx="6" fill="#1a1200"/>
+  <text x="480" y="363" text-anchor="middle" fill="#78716c" font-size="9">OS service: launchd / systemd / schtasks</text>
+
+  <!-- ═══════════════════════════════
+       LEFT — Channels
+  ═══════════════════════════════ -->
+  <rect x="30" y="148" width="240" height="262" rx="14" fill="#0d1526" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="30" y="148" width="240" height="40" rx="14" fill="#1d4ed8"/>
+  <rect x="30" y="174" width="240" height="14" fill="#1d4ed8"/>
+  <text x="150" y="172" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">Channels (40+)</text>
+  <text x="150" y="186" text-anchor="middle" fill="#bfdbfe" font-size="9">Messaging platforms connected to Gateway</text>
+
+  <!-- channel rows -->
+  <rect x="46" y="198" width="208" height="24" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="214" text-anchor="middle" fill="#93c5fd" font-size="10">Telegram</text>
+
+  <rect x="46" y="228" width="208" height="24" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="244" text-anchor="middle" fill="#93c5fd" font-size="10">WhatsApp</text>
+
+  <rect x="46" y="258" width="208" height="24" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="274" text-anchor="middle" fill="#93c5fd" font-size="10">Slack</text>
+
+  <rect x="46" y="288" width="208" height="24" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="304" text-anchor="middle" fill="#93c5fd" font-size="10">Discord</text>
+
+  <rect x="46" y="318" width="208" height="24" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="334" text-anchor="middle" fill="#93c5fd" font-size="10">iMessage / SMS</text>
+
+  <rect x="46" y="348" width="208" height="24" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="150" y="364" text-anchor="middle" fill="#93c5fd" font-size="10">Signal · Teams · Email + 34 more</text>
+
+  <text x="150" y="396" text-anchor="middle" fill="#334155" font-size="9">Messages flow in via WebSocket</text>
+
+  <!-- arrows: channels → gateway -->
+  <line x1="270" y1="250" x2="330" y2="260" stroke="#3b82f6" stroke-width="2"/>
+  <polygon points="323,254 333,260 323,267" fill="#3b82f6"/>
+  <line x1="270" y1="280" x2="330" y2="275" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="270" y1="310" x2="330" y2="290" stroke="#3b82f6" stroke-width="2"/>
+
+  <!-- ═══════════════════════════════
+       RIGHT — Agents + LLM
+  ═══════════════════════════════ -->
+  <rect x="690" y="148" width="240" height="180" rx="14" fill="#1a0d26" stroke="#a855f7" stroke-width="2"/>
+  <rect x="690" y="148" width="240" height="40" rx="14" fill="#7e22ce"/>
+  <rect x="690" y="174" width="240" height="14" fill="#7e22ce"/>
+  <text x="810" y="172" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">Agents</text>
+  <text x="810" y="186" text-anchor="middle" fill="#e9d5ff" font-size="9">Process messages + use tools</text>
+
+  <rect x="706" y="198" width="208" height="24" rx="8" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="810" y="214" text-anchor="middle" fill="#d8b4fe" font-size="10">Receive message from Gateway</text>
+
+  <rect x="706" y="228" width="208" height="24" rx="8" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="810" y="244" text-anchor="middle" fill="#d8b4fe" font-size="10">Call LLM (Claude, GPT, Ollama…)</text>
+
+  <rect x="706" y="258" width="208" height="24" rx="8" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="810" y="274" text-anchor="middle" fill="#d8b4fe" font-size="10">Use tools (web, files, code…)</text>
+
+  <rect x="706" y="288" width="208" height="24" rx="8" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="810" y="304" text-anchor="middle" fill="#d8b4fe" font-size="10">Send reply back through Gateway</text>
+
+  <!-- LLM box below agents -->
+  <rect x="690" y="350" width="240" height="68" rx="14" fill="#082f49" stroke="#0891b2" stroke-width="2"/>
+  <text x="810" y="374" text-anchor="middle" fill="#67e8f9" font-size="12" font-weight="700">LLM</text>
+  <text x="810" y="392" text-anchor="middle" fill="#64748b" font-size="10">Claude · GPT · Gemini · Ollama</text>
+  <text x="810" y="408" text-anchor="middle" fill="#64748b" font-size="10">30+ providers</text>
+
+  <!-- arrows: gateway → agents + LLM -->
+  <line x1="624" y1="260" x2="684" y2="245" stroke="#a855f7" stroke-width="2"/>
+  <polygon points="677,239 687,245 677,251" fill="#a855f7"/>
+  <line x1="624" y1="280" x2="684" y2="270" stroke="#a855f7" stroke-width="2"/>
+
+  <!-- agents → LLM arrow -->
+  <line x1="810" y1="340" x2="810" y2="344" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="804,342 810,352 816,342" fill="#0891b2"/>
+
+  <!-- ═══════════════════════════════
+       BOTTOM — Control UI + You
+  ═══════════════════════════════ -->
+  <rect x="196" y="428" width="568" height="60" rx="12" fill="#0a1f14" stroke="#22c55e" stroke-width="2"/>
+  <text x="480" y="452" text-anchor="middle" fill="#86efac" font-size="12" font-weight="700">You — via Control UI or CLI</text>
+  <text x="480" y="470" text-anchor="middle" fill="#64748b" font-size="10">Browser at http://localhost:18789  ·  CLI commands  ·  Mobile app</text>
+
+  <!-- Control UI arrow up to gateway -->
+  <line x1="480" y1="428" x2="480" y2="384" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,3"/>
+  <polygon points="474,386 480,376 486,386" fill="#22c55e"/>
+
+  <!-- ═══════════════════════════════
+       FOOTER
+  ═══════════════════════════════ -->
+  <text x="480" y="510" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — Gateway as Central Hub</text>
+
+</svg>

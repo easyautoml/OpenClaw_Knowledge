@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="500" viewBox="0 0 820 500" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="500" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="410" y="34" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">The Workspace — What Lives Inside and Why</text>
+  <text x="410" y="52" text-anchor="middle" fill="#475569" font-size="11">One folder per agent — the agent reads instructions and context from here, and writes output back</text>
+
+  <!-- AGENT box (left) -->
+  <rect x="30" y="180" width="130" height="100" rx="12" fill="#1e1b3a" stroke="#6366f1" stroke-width="2"/>
+  <text x="95" y="218" text-anchor="middle" fill="#a5b4fc" font-size="22">⚙</text>
+  <text x="95" y="242" text-anchor="middle" fill="#a5b4fc" font-size="13" font-weight="700">Agent</text>
+  <text x="95" y="260" text-anchor="middle" fill="#475569" font-size="10">reads &amp; writes</text>
+
+  <!-- Bidirectional arrow Agent <-> Workspace -->
+  <line x1="162" y1="230" x2="222" y2="230" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="219,224 230,230 219,236" fill="#6366f1"/>
+  <polygon points="165,224 154,230 165,236" fill="#6366f1"/>
+
+  <!-- WORKSPACE folder (center) -->
+  <rect x="232" y="80" width="380" height="310" rx="14" fill="#111827" stroke="#f59e0b" stroke-width="2"/>
+  <!-- folder tab -->
+  <rect x="232" y="68" width="140" height="24" rx="6" fill="#f59e0b"/>
+  <text x="302" y="84" text-anchor="middle" fill="#0f1117" font-size="11" font-weight="700">~/my-workspace/</text>
+
+  <!-- CLAUDE.md file -->
+  <rect x="252" y="104" width="160" height="60" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="272" y="126" fill="#60a5fa" font-size="16">📄</text>
+  <text x="296" y="125" fill="#93c5fd" font-size="11" font-weight="700">CLAUDE.md</text>
+  <text x="296" y="141" fill="#475569" font-size="10">Agent instructions</text>
+  <text x="296" y="155" fill="#475569" font-size="10">persona · rules · context</text>
+
+  <!-- Project files -->
+  <rect x="432" y="104" width="160" height="60" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="452" y="126" fill="#4ade80" font-size="16">📁</text>
+  <text x="476" y="125" fill="#86efac" font-size="11" font-weight="700">Project Files</text>
+  <text x="476" y="141" fill="#475569" font-size="10">documents · code</text>
+  <text x="476" y="155" fill="#475569" font-size="10">data the agent can read</text>
+
+  <!-- Output / logs -->
+  <rect x="252" y="184" width="160" height="60" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="272" y="206" fill="#c084fc" font-size="16">📝</text>
+  <text x="296" y="205" fill="#d8b4fe" font-size="11" font-weight="700">Output &amp; Logs</text>
+  <text x="296" y="221" fill="#475569" font-size="10">summaries · reports</text>
+  <text x="296" y="235" fill="#475569" font-size="10">files the agent wrote</text>
+
+  <!-- Memory -->
+  <rect x="432" y="184" width="160" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="452" y="206" fill="#6ee7b7" font-size="16">🧠</text>
+  <text x="476" y="205" fill="#6ee7b7" font-size="11" font-weight="700">Memory</text>
+  <text x="476" y="221" fill="#475569" font-size="10">facts saved across</text>
+  <text x="476" y="235" fill="#475569" font-size="10">conversations</text>
+
+  <!-- Skills folder -->
+  <rect x="252" y="264" width="340" height="50" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="272" y="286" fill="#fca5a5" font-size="16">⚡</text>
+  <text x="296" y="285" fill="#fca5a5" font-size="11" font-weight="700">skills/</text>
+  <text x="296" y="301" fill="#475569" font-size="10">custom commands this agent knows — loaded from markdown files in this folder</text>
+
+  <!-- READ label on arrow -->
+  <text x="186" y="218" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="700">reads</text>
+  <text x="186" y="248" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="700">writes</text>
+
+  <!-- Right side: best practices panel -->
+  <rect x="630" y="80" width="170" height="310" rx="12" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+  <text x="715" y="104" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700">Best Practices</text>
+
+  <!-- tip 1 -->
+  <rect x="642" y="116" width="146" height="52" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="715" y="133" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="700">One folder per agent</text>
+  <text x="715" y="148" text-anchor="middle" fill="#64748b" font-size="9">Keep each agent's work</text>
+  <text x="715" y="160" text-anchor="middle" fill="#64748b" font-size="9">in its own directory</text>
+
+  <!-- tip 2 -->
+  <rect x="642" y="178" width="146" height="52" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="715" y="195" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="700">Always add CLAUDE.md</text>
+  <text x="715" y="210" text-anchor="middle" fill="#64748b" font-size="9">Write your instructions</text>
+  <text x="715" y="222" text-anchor="middle" fill="#64748b" font-size="9">here — loaded every time</text>
+
+  <!-- tip 3 -->
+  <rect x="642" y="240" width="146" height="52" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="715" y="257" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="700">Match folder to purpose</text>
+  <text x="715" y="272" text-anchor="middle" fill="#64748b" font-size="9">~/code for coding agent</text>
+  <text x="715" y="284" text-anchor="middle" fill="#64748b" font-size="9">~/research for research</text>
+
+  <!-- tip 4 -->
+  <rect x="642" y="302" width="146" height="52" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="715" y="319" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="700">Don't mix agents</text>
+  <text x="715" y="334" text-anchor="middle" fill="#64748b" font-size="9">Shared folders cause</text>
+  <text x="715" y="346" text-anchor="middle" fill="#64748b" font-size="9">context bleed-over</text>
+
+  <!-- Footer -->
+  <text x="410" y="468" text-anchor="middle" fill="#334155" font-size="11">CLAUDE.md is the most important file — it tells the agent who it is and how to behave</text>
+
+</svg>

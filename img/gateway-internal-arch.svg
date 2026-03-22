@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="620" viewBox="0 0 1020 620" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1020" height="620" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="510" y="34" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">Gateway Internal Architecture — server.impl.ts</text>
+  <text x="510" y="52" text-anchor="middle" fill="#475569" font-size="11">Single Node.js process · shared port 18789 · WS + HTTP via HTTP Upgrade</text>
+
+  <!-- ══════════ TRANSPORT LAYER (top) ══════════ -->
+  <rect x="20" y="68" width="980" height="72" rx="10" fill="#0d1526" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="510" y="84" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">TRANSPORT LAYER — node:http / node:https  +  ws@8  (WebSocketServer)</text>
+
+  <!-- HTTP block -->
+  <rect x="36" y="90" width="200" height="38" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="136" y="108" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">HTTP Server (node:http)</text>
+  <text x="136" y="122" text-anchor="middle" fill="#475569" font-size="9">Control UI · Hooks · OpenAI endpoint</text>
+
+  <!-- Upgrade block -->
+  <rect x="250" y="90" width="140" height="38" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="320" y="108" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">HTTP Upgrade</text>
+  <text x="320" y="122" text-anchor="middle" fill="#475569" font-size="9">WS handshake + auth</text>
+
+  <!-- WS Server block -->
+  <rect x="404" y="90" width="180" height="38" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="494" y="108" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">WebSocketServer (ws@8)</text>
+  <text x="494" y="122" text-anchor="middle" fill="#475569" font-size="9">max 25 MB · 50 MB buffer</text>
+
+  <!-- TLS block -->
+  <rect x="598" y="90" width="130" height="38" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="663" y="108" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">TLS (optional)</text>
+  <text x="663" y="122" text-anchor="middle" fill="#475569" font-size="9">auto-gen self-signed cert</text>
+
+  <!-- Bind block -->
+  <rect x="742" y="90" width="240" height="38" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="862" y="108" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">Bind Resolution (net.ts)</text>
+  <text x="862" y="122" text-anchor="middle" fill="#475569" font-size="9">loopback · lan · tailnet · auto · custom</text>
+
+  <!-- ══════════ AUTH LAYER ══════════ -->
+  <rect x="20" y="158" width="420" height="86" rx="10" fill="#1a0d26" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="230" y="172" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">AUTH LAYER — auth.ts + auth-rate-limit.ts</text>
+
+  <rect x="36" y="180" width="120" height="30" rx="6" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="96" y="198" text-anchor="middle" fill="#d8b4fe" font-size="9">Mode Resolver</text>
+
+  <rect x="166" y="180" width="120" height="30" rx="6" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="226" y="198" text-anchor="middle" fill="#d8b4fe" font-size="9">Token / Password / Proxy</text>
+
+  <rect x="296" y="180" width="130" height="30" rx="6" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="361" y="198" text-anchor="middle" fill="#d8b4fe" font-size="9">Rate Limiter (sliding-window)</text>
+
+  <text x="36" y="236" fill="#64748b" font-size="9">Scopes: operator.admin · operator.read · operator.write · operator.approvals · operator.pairing</text>
+
+  <!-- ══════════ RPC DISPATCHER ══════════ -->
+  <rect x="450" y="158" width="550" height="86" rx="10" fill="#082f49" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="725" y="172" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">RPC DISPATCHER — server-methods.ts  (25+ handler namespaces)</text>
+
+  <!-- method groups -->
+  <rect x="466" y="180" width="68" height="26" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="500" y="197" text-anchor="middle" fill="#67e8f9" font-size="8.5">chat/agent</text>
+
+  <rect x="544" y="180" width="68" height="26" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="578" y="197" text-anchor="middle" fill="#67e8f9" font-size="8.5">channels</text>
+
+  <rect x="622" y="180" width="68" height="26" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="656" y="197" text-anchor="middle" fill="#67e8f9" font-size="8.5">health/logs</text>
+
+  <rect x="700" y="180" width="68" height="26" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="734" y="197" text-anchor="middle" fill="#67e8f9" font-size="8.5">sessions</text>
+
+  <rect x="778" y="180" width="68" height="26" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="812" y="197" text-anchor="middle" fill="#67e8f9" font-size="8.5">models/skills</text>
+
+  <rect x="856" y="180" width="62" height="26" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="887" y="197" text-anchor="middle" fill="#67e8f9" font-size="8.5">cron/hooks</text>
+
+  <rect x="928" y="180" width="56" height="26" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="956" y="197" text-anchor="middle" fill="#67e8f9" font-size="8.5">+14 more</text>
+
+  <text x="466" y="236" fill="#64748b" font-size="9">Role guard (operator / node) → Scope guard (operator.read/write/admin) → Handler fn → Response</text>
+
+  <!-- ══════════ CHANNEL MANAGER ══════════ -->
+  <rect x="20" y="262" width="300" height="110" rx="10" fill="#0a1f14" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="170" y="278" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">CHANNEL MANAGER — server-channels.ts</text>
+
+  <rect x="36" y="285" width="268" height="24" rx="6" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="170" y="301" text-anchor="middle" fill="#86efac" font-size="9">aborts: Map&lt;channelKey, AbortController&gt;</text>
+
+  <rect x="36" y="315" width="268" height="24" rx="6" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="170" y="331" text-anchor="middle" fill="#86efac" font-size="9">tasks: Map&lt;channelKey, Promise&lt;void&gt;&gt;</text>
+
+  <text x="36" y="360" fill="#475569" font-size="9">Backoff: 5s → 5min · factor 2 · jitter 10% · max 10 retries</text>
+
+  <!-- ══════════ HEALTH MONITOR ══════════ -->
+  <rect x="334" y="262" width="240" height="110" rx="10" fill="#1a0a0a" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="454" y="278" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">CHANNEL HEALTH MONITOR</text>
+  <text x="454" y="291" text-anchor="middle" fill="#64748b" font-size="8">channel-health-monitor.ts</text>
+
+  <rect x="350" y="298" width="208" height="20" rx="5" fill="#2a0a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="454" y="312" text-anchor="middle" fill="#fca5a5" font-size="8.5">Check interval: 5 min</text>
+
+  <rect x="350" y="324" width="208" height="20" rx="5" fill="#2a0a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="454" y="338" text-anchor="middle" fill="#fca5a5" font-size="8.5">Stale threshold: 30 min</text>
+
+  <rect x="350" y="350" width="208" height="20" rx="5" fill="#2a0a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="454" y="364" text-anchor="middle" fill="#fca5a5" font-size="8.5">Max restarts/hour: 10 · cooldown: 2 cycles</text>
+
+  <!-- ══════════ CONFIG RELOADER ══════════ -->
+  <rect x="588" y="262" width="240" height="110" rx="10" fill="#271f0a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="708" y="278" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">CONFIG RELOADER — config-reload.ts</text>
+
+  <rect x="604" y="290" width="208" height="20" rx="5" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+  <text x="708" y="304" text-anchor="middle" fill="#fbbf24" font-size="8.5">chokidar@5 — watches config file</text>
+
+  <rect x="604" y="316" width="208" height="20" rx="5" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+  <text x="708" y="330" text-anchor="middle" fill="#fbbf24" font-size="8.5">Debounce: 300ms · diffConfigPaths()</text>
+
+  <rect x="604" y="342" width="208" height="20" rx="5" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+  <text x="708" y="356" text-anchor="middle" fill="#fbbf24" font-size="8.5">Modes: off / hot / restart / hybrid</text>
+
+  <!-- ══════════ BROADCASTER ══════════ -->
+  <rect x="842" y="262" width="160" height="110" rx="10" fill="#0d1526" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="922" y="278" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">BROADCASTER</text>
+  <text x="922" y="291" text-anchor="middle" fill="#64748b" font-size="8">server-broadcast.ts</text>
+
+  <rect x="858" y="298" width="128" height="18" rx="5" fill="#1e1b3a" stroke="#6366f1" stroke-width="1"/>
+  <text x="922" y="311" text-anchor="middle" fill="#a5b4fc" font-size="8">Push events to all clients</text>
+
+  <rect x="858" y="322" width="128" height="18" rx="5" fill="#1e1b3a" stroke="#6366f1" stroke-width="1"/>
+  <text x="922" y="335" text-anchor="middle" fill="#a5b4fc" font-size="8">Scope-gated events</text>
+
+  <rect x="858" y="346" width="128" height="18" rx="5" fill="#1e1b3a" stroke="#6366f1" stroke-width="1"/>
+  <text x="922" y="359" text-anchor="middle" fill="#a5b4fc" font-size="8">dropIfSlow · seq counter</text>
+
+  <!-- ══════════ SIDECARS ROW ══════════ -->
+  <rect x="20" y="390" width="980" height="70" rx="10" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="510" y="404" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">SIDECARS — started by startGatewaySidecars() in server-startup.ts</text>
+
+  <rect x="36" y="410" width="110" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="91" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">Boot Runner</text>
+  <text x="91" y="440" text-anchor="middle" fill="#475569" font-size="7.5">BOOT.md → agent</text>
+
+  <rect x="156" y="410" width="110" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="211" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">Browser Control</text>
+  <text x="211" y="440" text-anchor="middle" fill="#475569" font-size="7.5">port base+2 (loopback)</text>
+
+  <rect x="276" y="410" width="110" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="331" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">Gmail Watcher</text>
+  <text x="331" y="440" text-anchor="middle" fill="#475569" font-size="7.5">hooks.gmail config</text>
+
+  <rect x="396" y="410" width="110" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="451" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">Cron Service</text>
+  <text x="451" y="440" text-anchor="middle" fill="#475569" font-size="7.5">scheduled agent runs</text>
+
+  <rect x="516" y="410" width="110" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="571" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">mDNS Discovery</text>
+  <text x="571" y="440" text-anchor="middle" fill="#475569" font-size="7.5">_openclaw-gw._tcp</text>
+
+  <rect x="636" y="410" width="110" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="691" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">Tailscale Exposure</text>
+  <text x="691" y="440" text-anchor="middle" fill="#475569" font-size="7.5">serve / funnel mode</text>
+
+  <rect x="756" y="410" width="110" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="811" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">Heartbeat Runner</text>
+  <text x="811" y="440" text-anchor="middle" fill="#475569" font-size="7.5">keep-alive pings</text>
+
+  <rect x="876" y="410" width="108" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="930" y="426" text-anchor="middle" fill="#94a3b8" font-size="8.5">Session Lock GC</text>
+  <text x="930" y="440" text-anchor="middle" fill="#475569" font-size="7.5">stale lock cleanup 30m</text>
+
+  <!-- ══════════ LANE CONCURRENCY ══════════ -->
+  <rect x="20" y="476" width="980" height="60" rx="10" fill="#0d1526" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="510" y="490" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">LANE CONCURRENCY — server-lanes.ts  (command-queue.ts)</text>
+
+  <rect x="36" y="498" width="260" height="26" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="166" y="515" text-anchor="middle" fill="#93c5fd" font-size="9">CommandLane.Main  (agent turns · configurable)</text>
+
+  <rect x="310" y="498" width="260" height="26" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="440" y="515" text-anchor="middle" fill="#93c5fd" font-size="9">CommandLane.Subagent  (sub-agent calls · configurable)</text>
+
+  <rect x="584" y="498" width="260" height="26" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="714" y="515" text-anchor="middle" fill="#93c5fd" font-size="9">CommandLane.Cron  (cron job turns · default 1)</text>
+
+  <!-- ══════════ SECRETS / PLUGINS ══════════ -->
+  <rect x="20" y="552" width="980" height="52" rx="10" fill="#1a1200" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="510" y="566" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">SECRETS RUNTIME  +  PLUGIN RUNTIME  (server-plugins.ts · secrets/runtime.ts)</text>
+
+  <rect x="36" y="574" width="230" height="22" rx="5" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="151" y="589" text-anchor="middle" fill="#fbbf24" font-size="8.5">SecretsRuntimeSnapshot (env-resolved refs)</text>
+
+  <rect x="280" y="574" width="230" height="22" rx="5" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="395" y="589" text-anchor="middle" fill="#fbbf24" font-size="8.5">PluginRuntime (per-request scope)</text>
+
+  <rect x="524" y="574" width="230" height="22" rx="5" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="639" y="589" text-anchor="middle" fill="#fbbf24" font-size="8.5">NodeRegistry (mobile nodes, pairing)</text>
+
+  <rect x="768" y="574" width="230" height="22" rx="5" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="883" y="589" text-anchor="middle" fill="#fbbf24" font-size="8.5">ExecApprovalManager (tool approval flow)</text>
+
+  <!-- Footer -->
+  <text x="510" y="612" text-anchor="middle" fill="#334155" font-size="9">OpenClaw — Gateway Internal Architecture · Entry point: server.impl.ts → startGatewayServer()</text>
+
+</svg>

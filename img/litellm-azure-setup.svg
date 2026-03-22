@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="520" viewBox="0 0 920 520" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="920" height="520" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="460" y="38" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">Setup Azure OpenAI in LiteLLM</text>
+  <text x="460" y="58" text-anchor="middle" fill="#64748b" font-size="12">Get values from Azure Portal, then paste them into LiteLLM config.yaml</text>
+
+  <!-- ═══════════════════════════════════════
+       LEFT PANEL — Azure Portal
+  ═══════════════════════════════════════ -->
+  <rect x="30" y="78" width="360" height="400" rx="14" fill="#082f49" stroke="#0891b2" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="30" y="78" width="360" height="44" rx="14" fill="#0e7490"/>
+  <rect x="30" y="106" width="360" height="16" fill="#0e7490"/>
+  <text x="210" y="106" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">Azure Portal</text>
+  <text x="210" y="122" text-anchor="middle" fill="#cffafe" font-size="10">portal.azure.com — Azure OpenAI Resource</text>
+
+  <!-- Step A: Find Endpoint -->
+  <rect x="50" y="140" width="320" height="70" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <circle cx="76" cy="155" r="10" fill="#0e7490"/>
+  <text x="76" y="159" text-anchor="middle" fill="white" font-size="9" font-weight="700">A</text>
+  <text x="210" y="158" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="600">Copy your Endpoint URL</text>
+  <text x="210" y="174" text-anchor="middle" fill="#94a3b8" font-size="10">Resource  →  Keys and Endpoint</text>
+  <rect x="60" y="183" width="300" height="20" rx="4" fill="#0c2233" stroke="#164e63" stroke-width="1"/>
+  <text x="210" y="197" text-anchor="middle" fill="#22d3ee" font-size="9">https://YOUR-RESOURCE.openai.azure.com/</text>
+
+  <!-- Step B: Find API Key -->
+  <rect x="50" y="222" width="320" height="70" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <circle cx="76" cy="237" r="10" fill="#0e7490"/>
+  <text x="76" y="241" text-anchor="middle" fill="white" font-size="9" font-weight="700">B</text>
+  <text x="210" y="240" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="600">Copy API Key (Key 1 or Key 2)</text>
+  <text x="210" y="256" text-anchor="middle" fill="#94a3b8" font-size="10">Resource  →  Keys and Endpoint</text>
+  <rect x="60" y="265" width="300" height="20" rx="4" fill="#0c2233" stroke="#164e63" stroke-width="1"/>
+  <text x="210" y="279" text-anchor="middle" fill="#22d3ee" font-size="9">abc123def456...  (32 hex characters)</text>
+
+  <!-- Step C: Find Deployment Name -->
+  <rect x="50" y="304" width="320" height="70" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <circle cx="76" cy="319" r="10" fill="#0e7490"/>
+  <text x="76" y="323" text-anchor="middle" fill="white" font-size="9" font-weight="700">C</text>
+  <text x="210" y="322" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="600">Copy Deployment Name</text>
+  <text x="210" y="338" text-anchor="middle" fill="#94a3b8" font-size="10">Azure OpenAI Studio  →  Deployments</text>
+  <rect x="60" y="347" width="300" height="20" rx="4" fill="#0c2233" stroke="#164e63" stroke-width="1"/>
+  <text x="210" y="361" text-anchor="middle" fill="#22d3ee" font-size="9">my-gpt4o-deployment  (name you chose)</text>
+
+  <!-- Step D: API Version -->
+  <rect x="50" y="386" width="320" height="56" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <circle cx="76" cy="401" r="10" fill="#0e7490"/>
+  <text x="76" y="405" text-anchor="middle" fill="white" font-size="9" font-weight="700">D</text>
+  <text x="210" y="404" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="600">Note the API Version</text>
+  <text x="210" y="422" text-anchor="middle" fill="#94a3b8" font-size="10">Use the latest stable version</text>
+  <text x="210" y="436" text-anchor="middle" fill="#22d3ee" font-size="9">2024-10-01-preview  or  2025-01-01-preview</text>
+
+  <!-- ═══════════════════════════
+       ARROWS (portal → config)
+  ═══════════════════════════ -->
+  <!-- Arrow A: endpoint -->
+  <line x1="370" y1="175" x2="530" y2="186" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="523,181 533,186 523,192" fill="#0891b2"/>
+
+  <!-- Arrow B: api key -->
+  <line x1="370" y1="257" x2="530" y2="260" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="523,254 533,260 523,265" fill="#0891b2"/>
+
+  <!-- Arrow C: deployment -->
+  <line x1="370" y1="339" x2="530" y2="334" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="523,328 533,334 523,340" fill="#0891b2"/>
+
+  <!-- Arrow D: api version -->
+  <line x1="370" y1="414" x2="530" y2="408" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="523,402 533,408 523,414" fill="#0891b2"/>
+
+  <!-- ═══════════════════════════════════════
+       RIGHT PANEL — LiteLLM config.yaml
+  ═══════════════════════════════════════ -->
+  <rect x="530" y="78" width="360" height="400" rx="14" fill="#1a1200" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Header -->
+  <rect x="530" y="78" width="360" height="44" rx="14" fill="#b45309"/>
+  <rect x="530" y="106" width="360" height="16" fill="#b45309"/>
+  <text x="710" y="106" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">LiteLLM  config.yaml</text>
+  <text x="710" y="122" text-anchor="middle" fill="#fef3c7" font-size="10">~/litellm/config.yaml — paste Azure values here</text>
+
+  <!-- Code block background -->
+  <rect x="548" y="138" width="324" height="316" rx="8" fill="#0d0d0d" stroke="#374151" stroke-width="1"/>
+
+  <!-- YAML content -->
+  <text x="560" y="158" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">model_list:</text>
+
+  <text x="560" y="176" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">  - model_name: gpt-4o        </text>
+  <text x="560" y="192" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">    litellm_params:</text>
+  <text x="560" y="208" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      model: azure/</text>
+  <text x="662" y="208" fill="#fbbf24" font-size="9" font-family="'Courier New', monospace">my-gpt4o-deployment</text>
+  <!-- C marker -->
+  <circle cx="842" cy="204" r="8" fill="#0e7490" opacity="0.8"/>
+  <text x="842" y="208" text-anchor="middle" fill="white" font-size="7" font-weight="700">C</text>
+
+  <text x="560" y="224" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      api_base: </text>
+  <text x="632" y="224" fill="#22d3ee" font-size="9" font-family="'Courier New', monospace">https://YOUR-RES...</text>
+  <!-- A marker -->
+  <circle cx="842" cy="220" r="8" fill="#0e7490" opacity="0.8"/>
+  <text x="842" y="224" text-anchor="middle" fill="white" font-size="7" font-weight="700">A</text>
+
+  <text x="560" y="240" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      api_key: </text>
+  <text x="628" y="240" fill="#22d3ee" font-size="9" font-family="'Courier New', monospace">os.environ/AZURE_API_KEY</text>
+  <!-- B marker -->
+  <circle cx="842" cy="236" r="8" fill="#0e7490" opacity="0.8"/>
+  <text x="842" y="240" text-anchor="middle" fill="white" font-size="7" font-weight="700">B</text>
+
+  <text x="560" y="256" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      api_version: </text>
+  <text x="648" y="256" fill="#22d3ee" font-size="9" font-family="'Courier New', monospace">2024-10-01-preview</text>
+  <!-- D marker -->
+  <circle cx="842" cy="252" r="8" fill="#0e7490" opacity="0.8"/>
+  <text x="842" y="256" text-anchor="middle" fill="white" font-size="7" font-weight="700">D</text>
+
+  <!-- second model entry -->
+  <text x="560" y="280" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">  - model_name: gpt-4o-mini</text>
+  <text x="560" y="296" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">    litellm_params:</text>
+  <text x="560" y="312" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      model: azure/</text>
+  <text x="662" y="312" fill="#fbbf24" font-size="9" font-family="'Courier New', monospace">my-mini-deployment</text>
+  <text x="560" y="328" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      api_base: ...</text>
+  <text x="560" y="344" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      api_key: os.environ/AZURE_API_KEY</text>
+  <text x="560" y="360" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">      api_version: 2024-10-01-preview</text>
+
+  <!-- db section -->
+  <text x="560" y="384" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">general_settings:</text>
+  <text x="560" y="400" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">  database_url: </text>
+  <text x="648" y="400" fill="#4ade80" font-size="9" font-family="'Courier New', monospace">postgresql://...</text>
+  <text x="560" y="416" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">  master_key: </text>
+  <text x="636" y="416" fill="#4ade80" font-size="9" font-family="'Courier New', monospace">sk-my-master-key</text>
+  <text x="560" y="432" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">  store_model_in_db: true</text>
+  <text x="560" y="448" fill="#6b7280" font-size="9" font-family="'Courier New', monospace">  ui_access_mode: all</text>
+
+  <!-- ═══════════════════════════
+       BOTTOM FOOTER
+  ═══════════════════════════ -->
+  <rect x="30" y="494" width="860" height="18" rx="6" fill="#111827"/>
+  <text x="460" y="507" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — Azure OpenAI setup in LiteLLM</text>
+
+</svg>

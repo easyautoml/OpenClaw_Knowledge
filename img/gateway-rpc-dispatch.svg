@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="480" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">RPC Dispatch Pipeline</text>
+  <text x="450" y="52" text-anchor="middle" fill="#475569" font-size="11">server-methods.ts · Every WebSocket message is a JSON RPC call</text>
+
+  <!-- ═══ STEP 1: Receive ═══ -->
+  <rect x="30" y="72" width="150" height="80" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <text x="105" y="96" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="700">1. Receive</text>
+  <rect x="44" y="104" width="122" height="38" rx="5" fill="#060d1a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="105" y="120" text-anchor="middle" fill="#60a5fa" font-size="8" font-family="'Courier New', monospace">{</text>
+  <text x="105" y="132" text-anchor="middle" fill="#60a5fa" font-size="8" font-family="'Courier New', monospace">  id, method, params</text>
+  <text x="105" y="140" text-anchor="middle" fill="#60a5fa" font-size="8" font-family="'Courier New', monospace">}</text>
+
+  <line x1="180" y1="112" x2="210" y2="112" stroke="#3b82f6" stroke-width="2"/>
+  <polygon points="206,107 214,112 206,117" fill="#3b82f6"/>
+
+  <!-- ═══ STEP 2: Parse ═══ -->
+  <rect x="214" y="72" width="130" height="80" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="279" y="96" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700">2. Parse</text>
+  <text x="279" y="116" text-anchor="middle" fill="#64748b" font-size="9">JSON.parse()</text>
+  <text x="279" y="132" text-anchor="middle" fill="#64748b" font-size="9">Validate envelope</text>
+  <text x="279" y="148" text-anchor="middle" fill="#64748b" font-size="9">Trim pre-auth: 64 KB</text>
+
+  <line x1="344" y1="112" x2="374" y2="112" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="370,107 378,112 370,117" fill="#6366f1"/>
+
+  <!-- ═══ STEP 3: Role + Scope guard ═══ -->
+  <rect x="378" y="62" width="160" height="100" rx="10" fill="#1a0d26" stroke="#a855f7" stroke-width="2"/>
+  <text x="458" y="82" text-anchor="middle" fill="#d8b4fe" font-size="11" font-weight="700">3. Authorization</text>
+  <text x="458" y="98" text-anchor="middle" fill="#64748b" font-size="9">parseGatewayRole()</text>
+  <text x="458" y="114" text-anchor="middle" fill="#64748b" font-size="9">isRoleAuthorizedForMethod()</text>
+  <text x="458" y="130" text-anchor="middle" fill="#64748b" font-size="9">authorizeOperatorScopesForMethod()</text>
+  <text x="458" y="154" text-anchor="middle" fill="#ef4444" font-size="8">→ error if role/scope denied</text>
+
+  <line x1="538" y1="112" x2="568" y2="112" stroke="#a855f7" stroke-width="2"/>
+  <polygon points="564,107 572,112 564,117" fill="#a855f7"/>
+
+  <!-- ═══ STEP 4: Handler lookup ═══ -->
+  <rect x="572" y="72" width="140" height="80" rx="10" fill="#082f49" stroke="#0891b2" stroke-width="2"/>
+  <text x="642" y="92" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="700">4. Handler</text>
+  <text x="642" y="110" text-anchor="middle" fill="#64748b" font-size="9">coreGatewayHandlers[method]</text>
+  <text x="642" y="126" text-anchor="middle" fill="#64748b" font-size="9">+ pluginHandlers</text>
+  <text x="642" y="142" text-anchor="middle" fill="#ef4444" font-size="8">→ "method not found"</text>
+
+  <line x1="712" y1="112" x2="742" y2="112" stroke="#0891b2" stroke-width="2"/>
+  <polygon points="738,107 746,112 738,117" fill="#0891b2"/>
+
+  <!-- ═══ STEP 5: Execute + Respond ═══ -->
+  <rect x="746" y="72" width="130" height="80" rx="10" fill="#0a1f14" stroke="#22c55e" stroke-width="2"/>
+  <text x="811" y="92" text-anchor="middle" fill="#86efac" font-size="11" font-weight="700">5. Respond</text>
+  <text x="811" y="110" text-anchor="middle" fill="#64748b" font-size="9">await handler(params, ctx)</text>
+  <text x="811" y="126" text-anchor="middle" fill="#64748b" font-size="9">send {id, result} or</text>
+  <text x="811" y="142" text-anchor="middle" fill="#64748b" font-size="9">{id, error: {code, msg}}</text>
+
+  <!-- ═══ ROLES TABLE ═══ -->
+  <rect x="30" y="188" width="420" height="186" rx="10" fill="#1a0d26" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="240" y="206" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="700">Roles</text>
+
+  <!-- header row -->
+  <rect x="46" y="214" width="116" height="20" rx="4" fill="#4c1d95"/>
+  <text x="104" y="228" text-anchor="middle" fill="#e9d5ff" font-size="9" font-weight="600">Role</text>
+  <rect x="170" y="214" width="264" height="20" rx="4" fill="#4c1d95"/>
+  <text x="302" y="228" text-anchor="middle" fill="#e9d5ff" font-size="9" font-weight="600">What it can do</text>
+
+  <!-- row 1 -->
+  <rect x="46" y="238" width="116" height="40" rx="4" fill="#2d1a3d"/>
+  <text x="104" y="256" text-anchor="middle" fill="#c084fc" font-size="9" font-weight="600">operator</text>
+  <text x="104" y="270" text-anchor="middle" fill="#475569" font-size="8">default role</text>
+  <rect x="170" y="238" width="264" height="40" rx="4" fill="#2d1a3d"/>
+  <text x="302" y="254" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Full access gated by operator scopes:</text>
+  <text x="302" y="268" text-anchor="middle" fill="#64748b" font-size="8">read · write · admin · approvals · pairing</text>
+
+  <!-- row 2 -->
+  <rect x="46" y="282" width="116" height="40" rx="4" fill="#2d1a3d"/>
+  <text x="104" y="300" text-anchor="middle" fill="#c084fc" font-size="9" font-weight="600">node</text>
+  <text x="104" y="314" text-anchor="middle" fill="#475569" font-size="8">mobile/edge node</text>
+  <rect x="170" y="282" width="264" height="40" rx="4" fill="#2d1a3d"/>
+  <text x="302" y="298" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Limited to node.* methods only:</text>
+  <text x="302" y="312" text-anchor="middle" fill="#64748b" font-size="8">node.invoke.result · node.event · node.pending.*</text>
+
+  <!-- row 3 -->
+  <rect x="46" y="326" width="388" height="38" rx="4" fill="#1e1b3a" stroke="#4c1d95" stroke-width="1"/>
+  <text x="240" y="342" text-anchor="middle" fill="#a5b4fc" font-size="8.5">health method is always allowed regardless of auth mode or scope</text>
+  <text x="240" y="356" text-anchor="middle" fill="#475569" font-size="8">operator.admin scope bypasses all scope checks</text>
+
+  <!-- ═══ SCOPES TABLE ═══ -->
+  <rect x="470" y="188" width="404" height="186" rx="10" fill="#082f49" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="672" y="206" text-anchor="middle" fill="#67e8f9" font-size="12" font-weight="700">Operator Scopes</text>
+
+  <!-- rows -->
+  <rect x="486" y="218" width="372" height="22" rx="4" fill="#083344"/>
+  <text x="640" y="233" text-anchor="middle" fill="#a5f3fc" font-size="9" font-weight="600">operator.read</text>
+  <text x="840" y="233" text-anchor="middle" fill="#64748b" font-size="8">health · logs · channels.status · models · usage</text>
+
+  <rect x="486" y="244" width="372" height="22" rx="4" fill="#083344"/>
+  <text x="640" y="259" text-anchor="middle" fill="#a5f3fc" font-size="9" font-weight="600">operator.write</text>
+  <text x="840" y="259" text-anchor="middle" fill="#64748b" font-size="8">chat.send · agent.run · config.apply · cron.*</text>
+
+  <rect x="486" y="270" width="372" height="22" rx="4" fill="#083344"/>
+  <text x="640" y="285" text-anchor="middle" fill="#a5f3fc" font-size="9" font-weight="600">operator.approvals</text>
+  <text x="840" y="285" text-anchor="middle" fill="#64748b" font-size="8">exec.approval.request · resolve</text>
+
+  <rect x="486" y="296" width="372" height="22" rx="4" fill="#083344"/>
+  <text x="640" y="311" text-anchor="middle" fill="#a5f3fc" font-size="9" font-weight="600">operator.pairing</text>
+  <text x="840" y="311" text-anchor="middle" fill="#64748b" font-size="8">node.pair.* · device.pair.* · device.token.*</text>
+
+  <rect x="486" y="322" width="372" height="22" rx="4" fill="#083344"/>
+  <text x="640" y="337" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600">operator.admin</text>
+  <text x="840" y="337" text-anchor="middle" fill="#64748b" font-size="8">bypasses all scope checks — full access</text>
+
+  <rect x="486" y="348" width="372" height="20" rx="4" fill="#0c2233"/>
+  <text x="672" y="362" text-anchor="middle" fill="#475569" font-size="8">CLI connects with all 5 scopes by default · CLI_DEFAULT_OPERATOR_SCOPES</text>
+
+  <!-- ═══ Error codes ═══ -->
+  <rect x="30" y="392" width="840" height="66" rx="10" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="450" y="408" text-anchor="middle" fill="#64748b" font-size="10" font-weight="600">Error Response Shape: { id, error: { code, message } }</text>
+  <rect x="46" y="416" width="100" height="30" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="96" y="430" text-anchor="middle" fill="#94a3b8" font-size="8.5">INVALID_REQUEST</text>
+  <text x="96" y="442" text-anchor="middle" fill="#475569" font-size="7.5">auth / scope fail</text>
+
+  <rect x="156" y="416" width="100" height="30" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="206" y="430" text-anchor="middle" fill="#94a3b8" font-size="8.5">METHOD_NOT_FOUND</text>
+  <text x="206" y="442" text-anchor="middle" fill="#475569" font-size="7.5">unknown method</text>
+
+  <rect x="266" y="416" width="100" height="30" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="316" y="430" text-anchor="middle" fill="#94a3b8" font-size="8.5">INTERNAL_ERROR</text>
+  <text x="316" y="442" text-anchor="middle" fill="#475569" font-size="7.5">handler threw</text>
+
+  <rect x="376" y="416" width="100" height="30" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="426" y="430" text-anchor="middle" fill="#94a3b8" font-size="8.5">NOT_FOUND</text>
+  <text x="426" y="442" text-anchor="middle" fill="#475569" font-size="7.5">resource missing</text>
+
+  <rect x="486" y="416" width="100" height="30" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="536" y="430" text-anchor="middle" fill="#94a3b8" font-size="8.5">CONFLICT</text>
+  <text x="536" y="442" text-anchor="middle" fill="#475569" font-size="7.5">duplicate/lock</text>
+
+  <text x="650" y="435" fill="#64748b" font-size="9">Concurrent write budget: config.apply / config.patch / update.run</text>
+  <text x="650" y="449" fill="#475569" font-size="8">rate-limited via consumeControlPlaneWriteBudget()</text>
+
+</svg>

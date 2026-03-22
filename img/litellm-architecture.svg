@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="960" height="500" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="480" y="38" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">OpenClaw + LiteLLM + Azure OpenAI — Architecture</text>
+  <text x="480" y="58" text-anchor="middle" fill="#64748b" font-size="12">LiteLLM acts as a proxy gateway between OpenClaw and Azure OpenAI</text>
+
+  <!-- ═══════════════════════════
+       LEFT BOX — OpenClaw
+  ═══════════════════════════ -->
+  <rect x="30" y="82" width="210" height="330" rx="14" fill="#0d1526" stroke="#3b82f6" stroke-width="2"/>
+  <!-- Header band -->
+  <rect x="30" y="82" width="210" height="44" rx="14" fill="#1d4ed8"/>
+  <rect x="30" y="110" width="210" height="16" fill="#1d4ed8"/>
+  <text x="135" y="110" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">OpenClaw</text>
+  <text x="135" y="128" text-anchor="middle" fill="#bfdbfe" font-size="10">Your AI Assistant Platform</text>
+
+  <!-- Inner content -->
+  <text x="135" y="160" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">Sends Requests Via</text>
+  <text x="135" y="176" text-anchor="middle" fill="#64748b" font-size="10">OpenAI-compatible API</text>
+
+  <!-- Feature chips -->
+  <rect x="50" y="190" width="170" height="24" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="135" y="206" text-anchor="middle" fill="#93c5fd" font-size="10">Telegram / Slack / WhatsApp</text>
+
+  <rect x="50" y="222" width="170" height="24" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="135" y="238" text-anchor="middle" fill="#93c5fd" font-size="10">Multi-Agent Support</text>
+
+  <rect x="50" y="254" width="170" height="24" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="135" y="270" text-anchor="middle" fill="#93c5fd" font-size="10">Tools &amp; Skills</text>
+
+  <rect x="50" y="286" width="170" height="24" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="135" y="302" text-anchor="middle" fill="#93c5fd" font-size="10">Workspace &amp; Memory</text>
+
+  <!-- Bottom note -->
+  <text x="135" y="345" text-anchor="middle" fill="#475569" font-size="10">Connects to any</text>
+  <text x="135" y="360" text-anchor="middle" fill="#475569" font-size="10">OpenAI-compatible endpoint</text>
+  <text x="135" y="385" text-anchor="middle" fill="#3b82f6" font-size="22">&#x2699;</text>
+
+  <!-- ═══════════════════════════
+       ARROW 1 — OpenClaw → LiteLLM
+  ═══════════════════════════ -->
+  <line x1="240" y1="247" x2="330" y2="247" stroke="#3b82f6" stroke-width="2.5"/>
+  <polygon points="324,241 336,247 324,253" fill="#3b82f6"/>
+  <!-- label above arrow -->
+  <rect x="245" y="228" width="80" height="16" rx="4" fill="#1e3a5f"/>
+  <text x="285" y="239" text-anchor="middle" fill="#93c5fd" font-size="9" font-weight="600">HTTP / REST</text>
+  <!-- label below -->
+  <text x="285" y="264" text-anchor="middle" fill="#475569" font-size="9">OpenAI format</text>
+
+  <!-- ═══════════════════════════
+       CENTER BOX — LiteLLM Proxy
+  ═══════════════════════════ -->
+  <rect x="336" y="82" width="288" height="330" rx="14" fill="#1a1200" stroke="#f59e0b" stroke-width="2.5"/>
+  <!-- Header band -->
+  <rect x="336" y="82" width="288" height="44" rx="14" fill="#b45309"/>
+  <rect x="336" y="110" width="288" height="16" fill="#b45309"/>
+  <text x="480" y="110" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">LiteLLM Proxy</text>
+  <text x="480" y="128" text-anchor="middle" fill="#fef3c7" font-size="10">Unified AI Gateway &amp; Control Layer</text>
+
+  <!-- Section label -->
+  <text x="480" y="156" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">Key Capabilities</text>
+
+  <!-- Feature rows -->
+  <rect x="356" y="164" width="128" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="372" y="181" fill="#fcd34d" font-size="10">&#x1F504;  Model Routing</text>
+
+  <rect x="496" y="164" width="112" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="512" y="181" fill="#fcd34d" font-size="10">&#x23F1;  Rate Limiting</text>
+
+  <rect x="356" y="200" width="128" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="372" y="217" fill="#fcd34d" font-size="10">&#x1F4B0;  Cost Tracking</text>
+
+  <rect x="496" y="200" width="112" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="512" y="217" fill="#fcd34d" font-size="10">&#x1F511;  API Keys</text>
+
+  <rect x="356" y="236" width="128" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="372" y="253" fill="#fcd34d" font-size="10">&#x1F4CA;  Token Quotas</text>
+
+  <rect x="496" y="236" width="112" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="512" y="253" fill="#fcd34d" font-size="10">&#x1F4DD;  Audit Logs</text>
+
+  <rect x="356" y="272" width="128" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="372" y="289" fill="#fcd34d" font-size="10">&#x1F5C4;  PostgreSQL DB</text>
+
+  <rect x="496" y="272" width="112" height="28" rx="8" fill="#271f0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="512" y="289" fill="#fcd34d" font-size="10">&#x1F4BB;  Dashboard UI</text>
+
+  <!-- Port badge -->
+  <rect x="390" y="318" width="180" height="26" rx="8" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="480" y="334" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="600">Runs at localhost:4000</text>
+
+  <!-- Bottom DB note -->
+  <text x="480" y="370" text-anchor="middle" fill="#78716c" font-size="10">Backed by PostgreSQL for</text>
+  <text x="480" y="385" text-anchor="middle" fill="#78716c" font-size="10">persistent tracking &amp; usage stats</text>
+
+  <!-- ═══════════════════════════
+       ARROW 2 — LiteLLM → Azure
+  ═══════════════════════════ -->
+  <line x1="624" y1="247" x2="714" y2="247" stroke="#0891b2" stroke-width="2.5"/>
+  <polygon points="708,241 720,247 708,253" fill="#0891b2"/>
+  <!-- label above arrow -->
+  <rect x="629" y="228" width="80" height="16" rx="4" fill="#082f49"/>
+  <text x="669" y="239" text-anchor="middle" fill="#67e8f9" font-size="9" font-weight="600">Azure REST API</text>
+  <!-- label below -->
+  <text x="669" y="264" text-anchor="middle" fill="#475569" font-size="9">with API Key</text>
+
+  <!-- ═══════════════════════════
+       RIGHT BOX — Azure OpenAI
+  ═══════════════════════════ -->
+  <rect x="720" y="82" width="210" height="330" rx="14" fill="#082f49" stroke="#0891b2" stroke-width="2"/>
+  <!-- Header band -->
+  <rect x="720" y="82" width="210" height="44" rx="14" fill="#0e7490"/>
+  <rect x="720" y="110" width="210" height="16" fill="#0e7490"/>
+  <text x="825" y="110" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Azure OpenAI</text>
+  <text x="825" y="128" text-anchor="middle" fill="#cffafe" font-size="10">Microsoft Azure Cloud</text>
+
+  <!-- Models section -->
+  <text x="825" y="160" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="600">Deployed Models</text>
+
+  <rect x="740" y="168" width="170" height="26" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="825" y="185" text-anchor="middle" fill="#a5f3fc" font-size="11" font-weight="600">gpt-4o</text>
+
+  <rect x="740" y="202" width="170" height="26" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="825" y="219" text-anchor="middle" fill="#a5f3fc" font-size="11" font-weight="600">gpt-4o-mini</text>
+
+  <rect x="740" y="236" width="170" height="26" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="825" y="253" text-anchor="middle" fill="#a5f3fc" font-size="11" font-weight="600">gpt-4-turbo</text>
+
+  <rect x="740" y="270" width="170" height="26" rx="10" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="825" y="287" text-anchor="middle" fill="#a5f3fc" font-size="11" font-weight="600">o1 / o3-mini</text>
+
+  <!-- Region + endpoint note -->
+  <text x="825" y="330" text-anchor="middle" fill="#475569" font-size="10">Your Azure Endpoint</text>
+  <text x="825" y="346" text-anchor="middle" fill="#22d3ee" font-size="9">https://&lt;name&gt;.openai.azure.com/</text>
+  <text x="825" y="368" text-anchor="middle" fill="#475569" font-size="10">Region-specific deployment</text>
+  <text x="825" y="384" text-anchor="middle" fill="#475569" font-size="10">with enterprise access controls</text>
+
+  <!-- ═══════════════════════════
+       BOTTOM LEGEND
+  ═══════════════════════════ -->
+  <rect x="30" y="432" width="900" height="50" rx="10" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="150" y="451" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="700">OpenClaw</text>
+  <text x="150" y="467" text-anchor="middle" fill="#64748b" font-size="10">AI assistant platform</text>
+
+  <line x1="260" y1="455" x2="310" y2="455" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="285" y="451" text-anchor="middle" fill="#475569" font-size="8">routes to</text>
+
+  <text x="420" y="451" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="700">LiteLLM Proxy</text>
+  <text x="420" y="467" text-anchor="middle" fill="#64748b" font-size="10">control, rate-limit, track</text>
+
+  <line x1="530" y1="455" x2="580" y2="455" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="555" y="451" text-anchor="middle" fill="#475569" font-size="8">calls</text>
+
+  <text x="700" y="451" text-anchor="middle" fill="#0891b2" font-size="12" font-weight="700">Azure OpenAI</text>
+  <text x="700" y="467" text-anchor="middle" fill="#64748b" font-size="10">enterprise LLM service</text>
+
+  <text x="870" y="459" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — LiteLLM Architecture</text>
+
+</svg>

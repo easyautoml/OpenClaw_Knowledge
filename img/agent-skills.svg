@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="380" viewBox="0 0 820 380" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="380" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">Skills — Custom Commands You Define</text>
+  <text x="410" y="50" text-anchor="middle" fill="#475569" font-size="11">Write a markdown file → Agent learns the command → You invoke it with /name</text>
+
+  <!-- ══════════ STEP 1 — Define (skills/ folder) ══════════ -->
+  <rect x="20" y="68" width="220" height="260" rx="12" fill="#111827" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="20" y="56" width="220" height="24" rx="6" fill="#b45309"/>
+  <text x="130" y="73" text-anchor="middle" fill="#fef3c7" font-size="11" font-weight="700">Step 1 — Define</text>
+
+  <text x="130" y="100" text-anchor="middle" fill="#64748b" font-size="10">skills/ folder in your workspace</text>
+
+  <!-- skill file 1 -->
+  <rect x="36" y="110" width="188" height="52" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="50" y="128" fill="#fcd34d" font-size="11" font-weight="700">📄 summarize.md</text>
+  <text x="50" y="144" fill="#64748b" font-size="10">name: summarize</text>
+  <text x="50" y="156" fill="#64748b" font-size="10">desc: Summarize this document</text>
+
+  <!-- skill file 2 -->
+  <rect x="36" y="172" width="188" height="52" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="50" y="190" fill="#fcd34d" font-size="11" font-weight="700">📄 deploy.md</text>
+  <text x="50" y="206" fill="#64748b" font-size="10">name: deploy</text>
+  <text x="50" y="218" fill="#64748b" font-size="10">desc: Run the deploy script</text>
+
+  <!-- skill file 3 -->
+  <rect x="36" y="234" width="188" height="52" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="50" y="252" fill="#fcd34d" font-size="11" font-weight="700">📄 standup.md</text>
+  <text x="50" y="268" fill="#64748b" font-size="10">name: standup</text>
+  <text x="50" y="280" fill="#64748b" font-size="10">desc: Generate standup report</text>
+
+  <text x="130" y="310" text-anchor="middle" fill="#475569" font-size="10">Any .md file with a name field</text>
+  <text x="130" y="324" text-anchor="middle" fill="#475569" font-size="10">becomes a skill</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="242" y1="198" x2="286" y2="198" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="283,192 294,198 283,204" fill="#6366f1"/>
+  <text x="268" y="188" text-anchor="middle" fill="#6366f1" font-size="9">loads at</text>
+  <text x="268" y="200" text-anchor="middle" fill="#6366f1" font-size="9">startup</text>
+
+  <!-- ══════════ STEP 2 — Agent loads skills ══════════ -->
+  <rect x="296" y="68" width="220" height="260" rx="12" fill="#111827" stroke="#6366f1" stroke-width="2"/>
+  <rect x="296" y="56" width="220" height="24" rx="6" fill="#4338ca"/>
+  <text x="406" y="73" text-anchor="middle" fill="#e0e7ff" font-size="11" font-weight="700">Step 2 — Agent Learns</text>
+
+  <!-- Agent box -->
+  <rect x="322" y="90" width="168" height="70" rx="10" fill="#1e1b3a" stroke="#6366f1" stroke-width="2"/>
+  <text x="406" y="120" text-anchor="middle" fill="#a5b4fc" font-size="26">⚙</text>
+  <text x="406" y="148" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="700">Agent</text>
+
+  <!-- Known commands list -->
+  <text x="406" y="182" text-anchor="middle" fill="#64748b" font-size="10">Now knows these commands:</text>
+
+  <rect x="312" y="192" width="188" height="32" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+  <text x="406" y="213" text-anchor="middle" fill="#86efac" font-size="11" font-weight="600">/summarize</text>
+
+  <rect x="312" y="232" width="188" height="32" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+  <text x="406" y="253" text-anchor="middle" fill="#86efac" font-size="11" font-weight="600">/deploy</text>
+
+  <rect x="312" y="272" width="188" height="32" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+  <text x="406" y="293" text-anchor="middle" fill="#86efac" font-size="11" font-weight="600">/standup</text>
+
+  <text x="406" y="322" text-anchor="middle" fill="#475569" font-size="10">Skills enabled in agent config</text>
+  <text x="406" y="336" text-anchor="middle" fill="#475569" font-size="10">are available at every session</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="518" y1="198" x2="562" y2="198" stroke="#22c55e" stroke-width="2"/>
+  <polygon points="559,192 570,198 559,204" fill="#22c55e"/>
+  <text x="540" y="188" text-anchor="middle" fill="#22c55e" font-size="9">you</text>
+  <text x="540" y="200" text-anchor="middle" fill="#22c55e" font-size="9">invoke</text>
+
+  <!-- ══════════ STEP 3 — You invoke ══════════ -->
+  <rect x="572" y="68" width="228" height="260" rx="12" fill="#111827" stroke="#22c55e" stroke-width="2"/>
+  <rect x="572" y="56" width="228" height="24" rx="6" fill="#14532d"/>
+  <text x="686" y="73" text-anchor="middle" fill="#bbf7d0" font-size="11" font-weight="700">Step 3 — You Use It</text>
+
+  <!-- input example -->
+  <text x="686" y="100" text-anchor="middle" fill="#64748b" font-size="10">You type in chat:</text>
+  <rect x="588" y="108" width="196" height="36" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="686" y="131" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700">/summarize</text>
+
+  <!-- arrow down -->
+  <line x1="686" y1="144" x2="686" y2="162" stroke="#22c55e" stroke-width="1.5"/>
+  <polygon points="681,160 686,168 691,160" fill="#22c55e"/>
+
+  <!-- agent runs it -->
+  <rect x="588" y="168" width="196" height="40" rx="8" fill="#1e1b3a" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="686" y="185" text-anchor="middle" fill="#a5b4fc" font-size="10">Agent runs the skill</text>
+  <text x="686" y="200" text-anchor="middle" fill="#64748b" font-size="10">follows instructions in .md file</text>
+
+  <!-- arrow down -->
+  <line x1="686" y1="208" x2="686" y2="226" stroke="#22c55e" stroke-width="1.5"/>
+  <polygon points="681,224 686,232 691,224" fill="#22c55e"/>
+
+  <!-- result -->
+  <rect x="588" y="232" width="196" height="60" rx="8" fill="#052e16" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="686" y="252" text-anchor="middle" fill="#bbf7d0" font-size="10" font-weight="700">Result returned to you</text>
+  <text x="686" y="268" text-anchor="middle" fill="#64748b" font-size="10">"Here is the summary:</text>
+  <text x="686" y="282" text-anchor="middle" fill="#64748b" font-size="10">The document covers…"</text>
+
+  <text x="686" y="316" text-anchor="middle" fill="#475569" font-size="10">Works exactly like chatting —</text>
+  <text x="686" y="330" text-anchor="middle" fill="#475569" font-size="10">but the agent knows the task</text>
+
+  <!-- Footer -->
+  <text x="410" y="358" text-anchor="middle" fill="#334155" font-size="11">Skills = shortcuts for things you do often — write once in a .md file, use forever</text>
+
+</svg>

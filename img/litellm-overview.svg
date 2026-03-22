@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="560" viewBox="0 0 860 560" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="860" height="560" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="430" y="38" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">What is LiteLLM?</text>
+  <text x="430" y="58" text-anchor="middle" fill="#64748b" font-size="12">An open-source proxy that puts you in control of every AI request</text>
+
+  <!-- ═══════════════════════════
+       CENTER HUB
+  ═══════════════════════════ -->
+  <circle cx="430" cy="280" r="72" fill="#1a1200" stroke="#f59e0b" stroke-width="3"/>
+  <circle cx="430" cy="280" r="58" fill="#271f0a" stroke="#d97706" stroke-width="1.5"/>
+  <text x="430" y="272" text-anchor="middle" fill="#fcd34d" font-size="16" font-weight="700">LiteLLM</text>
+  <text x="430" y="290" text-anchor="middle" fill="#fbbf24" font-size="11">Proxy Server</text>
+  <text x="430" y="308" text-anchor="middle" fill="#78716c" font-size="9">open-source</text>
+
+  <!-- ═══════════════════════════
+       SPOKE LINES (hub to cards)
+  ═══════════════════════════ -->
+  <!-- Top-left -->
+  <line x1="388" y1="242" x2="300" y2="164" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <!-- Top -->
+  <line x1="430" y1="208" x2="430" y2="156" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <!-- Top-right -->
+  <line x1="472" y1="242" x2="558" y2="164" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <!-- Left -->
+  <line x1="358" y1="280" x2="234" y2="280" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <!-- Right -->
+  <line x1="502" y1="280" x2="626" y2="280" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <!-- Bottom-left -->
+  <line x1="388" y1="318" x2="300" y2="396" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <!-- Bottom -->
+  <line x1="430" y1="352" x2="430" y2="404" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <!-- Bottom-right -->
+  <line x1="472" y1="318" x2="558" y2="396" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+
+  <!-- ═══════════════════════════
+       FEATURE CARDS (8 around hub)
+  ═══════════════════════════ -->
+
+  <!-- TOP-LEFT: Unified API -->
+  <rect x="170" y="80" width="160" height="76" rx="12" fill="#0d1526" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="250" y="108" text-anchor="middle" fill="#60a5fa" font-size="20">&#x1F4E1;</text>
+  <text x="250" y="126" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="700">Unified API</text>
+  <text x="250" y="142" text-anchor="middle" fill="#64748b" font-size="9">One OpenAI-format API</text>
+  <text x="250" y="154" text-anchor="middle" fill="#64748b" font-size="9">for 100+ LLM providers</text>
+
+  <!-- TOP: Rate Limiting -->
+  <rect x="340" y="76" width="180" height="76" rx="12" fill="#0a1f14" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="430" y="104" text-anchor="middle" fill="#4ade80" font-size="20">&#x23F1;</text>
+  <text x="430" y="122" text-anchor="middle" fill="#86efac" font-size="11" font-weight="700">Rate Limiting</text>
+  <text x="430" y="138" text-anchor="middle" fill="#64748b" font-size="9">Per-user / per-key limits</text>
+  <text x="430" y="150" text-anchor="middle" fill="#64748b" font-size="9">on requests per minute</text>
+
+  <!-- TOP-RIGHT: Cost Tracking -->
+  <rect x="530" y="80" width="160" height="76" rx="12" fill="#1a0a0a" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="610" y="108" text-anchor="middle" fill="#f87171" font-size="20">&#x1F4B0;</text>
+  <text x="610" y="126" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="700">Cost Tracking</text>
+  <text x="610" y="142" text-anchor="middle" fill="#64748b" font-size="9">Token usage + cost per</text>
+  <text x="610" y="154" text-anchor="middle" fill="#64748b" font-size="9">user, team, or key</text>
+
+  <!-- LEFT: API Key Management -->
+  <rect x="60" y="244" width="166" height="76" rx="12" fill="#1a0d26" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="143" y="272" text-anchor="middle" fill="#c084fc" font-size="20">&#x1F511;</text>
+  <text x="143" y="290" text-anchor="middle" fill="#d8b4fe" font-size="11" font-weight="700">API Key Control</text>
+  <text x="143" y="306" text-anchor="middle" fill="#64748b" font-size="9">Issue virtual keys with</text>
+  <text x="143" y="318" text-anchor="middle" fill="#64748b" font-size="9">budget &amp; expiry rules</text>
+
+  <!-- RIGHT: Model Routing -->
+  <rect x="634" y="244" width="166" height="76" rx="12" fill="#082f49" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="717" y="272" text-anchor="middle" fill="#22d3ee" font-size="20">&#x1F504;</text>
+  <text x="717" y="290" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="700">Model Routing</text>
+  <text x="717" y="306" text-anchor="middle" fill="#64748b" font-size="9">Route to Azure, Bedrock</text>
+  <text x="717" y="318" text-anchor="middle" fill="#64748b" font-size="9">Ollama or any provider</text>
+
+  <!-- BOTTOM-LEFT: Audit Logging -->
+  <rect x="170" y="404" width="160" height="76" rx="12" fill="#0d1526" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="250" y="432" text-anchor="middle" fill="#60a5fa" font-size="20">&#x1F4DD;</text>
+  <text x="250" y="450" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="700">Audit Logging</text>
+  <text x="250" y="466" text-anchor="middle" fill="#64748b" font-size="9">Full request/response</text>
+  <text x="250" y="478" text-anchor="middle" fill="#64748b" font-size="9">logs stored in DB</text>
+
+  <!-- BOTTOM: Dashboard UI -->
+  <rect x="340" y="408" width="180" height="76" rx="12" fill="#271f0a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="430" y="436" text-anchor="middle" fill="#fcd34d" font-size="20">&#x1F4CA;</text>
+  <text x="430" y="454" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">Dashboard UI</text>
+  <text x="430" y="470" text-anchor="middle" fill="#64748b" font-size="9">Web UI at :4000 to</text>
+  <text x="430" y="482" text-anchor="middle" fill="#64748b" font-size="9">manage keys &amp; usage</text>
+
+  <!-- BOTTOM-RIGHT: Fallbacks -->
+  <rect x="530" y="404" width="160" height="76" rx="12" fill="#0a1f14" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="610" y="432" text-anchor="middle" fill="#4ade80" font-size="20">&#x26A1;</text>
+  <text x="610" y="450" text-anchor="middle" fill="#86efac" font-size="11" font-weight="700">Fallbacks</text>
+  <text x="610" y="466" text-anchor="middle" fill="#64748b" font-size="9">Auto-retry on failure</text>
+  <text x="610" y="478" text-anchor="middle" fill="#64748b" font-size="9">across multiple providers</text>
+
+  <!-- ═══════════════════════════
+       FOOTER
+  ═══════════════════════════ -->
+  <rect x="20" y="506" width="820" height="36" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="430" y="522" text-anchor="middle" fill="#94a3b8" font-size="11">LiteLLM is <tspan fill="#fbbf24" font-weight="600">100% open source</tspan>  ·  GitHub: BerriAI/litellm  ·  Works as a local proxy or self-hosted server</text>
+  <text x="430" y="536" text-anchor="middle" fill="#334155" font-size="10">OpenClaw — LiteLLM Overview</text>
+
+</svg>

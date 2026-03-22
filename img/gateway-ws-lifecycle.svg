@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="500" rx="16" fill="#0f1117"/>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">WebSocket Connection Lifecycle</text>
+  <text x="450" y="52" text-anchor="middle" fill="#475569" font-size="11">server/ws-connection.ts · Every client goes through these phases</text>
+
+  <!-- ═══ PHASE 1: HTTP Upgrade ═══ -->
+  <rect x="20" y="68" width="166" height="380" rx="12" fill="#0d1526" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="20" y="68" width="166" height="34" rx="12" fill="#1d4ed8"/>
+  <rect x="20" y="88" width="166" height="14" fill="#1d4ed8"/>
+  <text x="103" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">1. HTTP Upgrade</text>
+  <text x="103" y="100" text-anchor="middle" fill="#bfdbfe" font-size="8">Client sends GET + Upgrade: websocket</text>
+
+  <rect x="36" y="112" width="134" height="22" rx="5" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="103" y="127" text-anchor="middle" fill="#93c5fd" font-size="8.5">Check origin header</text>
+
+  <rect x="36" y="140" width="134" height="22" rx="5" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="103" y="155" text-anchor="middle" fill="#93c5fd" font-size="8.5">Extract credentials</text>
+  <text x="103" y="165" text-anchor="middle" fill="#475569" font-size="7.5">(header token / bearer)</text>
+
+  <rect x="36" y="182" width="134" height="22" rx="5" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="103" y="197" text-anchor="middle" fill="#93c5fd" font-size="8.5">Rate limit pre-check</text>
+
+  <rect x="36" y="210" width="134" height="22" rx="5" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="103" y="225" text-anchor="middle" fill="#93c5fd" font-size="8.5">Authenticate</text>
+  <text x="103" y="235" text-anchor="middle" fill="#475569" font-size="7.5">token / password / proxy</text>
+
+  <!-- REJECT path -->
+  <rect x="36" y="360" width="134" height="62" rx="5" fill="#2a0a0a" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="103" y="380" text-anchor="middle" fill="#fca5a5" font-size="9" font-weight="600">REJECT</text>
+  <text x="103" y="395" text-anchor="middle" fill="#64748b" font-size="7.5">401 · 429 (rate-limited)</text>
+  <text x="103" y="408" text-anchor="middle" fill="#64748b" font-size="7.5">record failed attempt</text>
+
+  <line x1="103" y1="232" x2="103" y2="355" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+  <polygon points="98,354 103,362 108,354" fill="#ef4444"/>
+
+  <!-- ═══ PHASE 2: Handshake ═══ -->
+  <rect x="200" y="68" width="166" height="380" rx="12" fill="#1a0d26" stroke="#a855f7" stroke-width="2"/>
+  <rect x="200" y="68" width="166" height="34" rx="12" fill="#7e22ce"/>
+  <rect x="200" y="88" width="166" height="14" fill="#7e22ce"/>
+  <text x="283" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">2. Handshake</text>
+  <text x="283" y="100" text-anchor="middle" fill="#e9d5ff" font-size="8">3 s timeout · connect method</text>
+
+  <rect x="216" y="112" width="134" height="22" rx="5" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="283" y="127" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Assign connection ID</text>
+  <text x="283" y="137" text-anchor="middle" fill="#475569" font-size="7.5">randomUUID()</text>
+
+  <rect x="216" y="150" width="134" height="22" rx="5" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="283" y="165" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Receive connect msg</text>
+  <text x="283" y="175" text-anchor="middle" fill="#475569" font-size="7.5">{method: "connect", params}</text>
+
+  <rect x="216" y="188" width="134" height="22" rx="5" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="283" y="203" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Validate role + scopes</text>
+
+  <rect x="216" y="216" width="134" height="22" rx="5" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="283" y="231" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Register GatewayWsClient</text>
+
+  <rect x="216" y="244" width="134" height="22" rx="5" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="283" y="259" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Upsert presence</text>
+
+  <rect x="216" y="272" width="134" height="22" rx="5" fill="#2d1a3d" stroke="#a855f7" stroke-width="1"/>
+  <text x="283" y="287" text-anchor="middle" fill="#d8b4fe" font-size="8.5">Broadcast presence snapshot</text>
+
+  <!-- ═══ PHASE 3: Active ═══ -->
+  <rect x="380" y="68" width="166" height="380" rx="12" fill="#082f49" stroke="#0891b2" stroke-width="2"/>
+  <rect x="380" y="68" width="166" height="34" rx="12" fill="#0e7490"/>
+  <rect x="380" y="88" width="166" height="14" fill="#0e7490"/>
+  <text x="463" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">3. Active</text>
+  <text x="463" y="100" text-anchor="middle" fill="#cffafe" font-size="8">Bidirectional JSON messages</text>
+
+  <rect x="396" y="112" width="134" height="22" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="463" y="127" text-anchor="middle" fill="#a5f3fc" font-size="8.5">Receive: {id, method, params}</text>
+
+  <rect x="396" y="140" width="134" height="22" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="463" y="155" text-anchor="middle" fill="#a5f3fc" font-size="8.5">authorizeGatewayMethod()</text>
+
+  <rect x="396" y="168" width="134" height="22" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="463" y="183" text-anchor="middle" fill="#a5f3fc" font-size="8.5">Route to handler</text>
+
+  <rect x="396" y="196" width="134" height="22" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="463" y="211" text-anchor="middle" fill="#a5f3fc" font-size="8.5">Send: {id, result} or {id, error}</text>
+
+  <rect x="396" y="240" width="134" height="22" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="463" y="255" text-anchor="middle" fill="#a5f3fc" font-size="8.5">Receive broadcasts</text>
+  <text x="463" y="265" text-anchor="middle" fill="#475569" font-size="7.5">events from gateway server</text>
+
+  <rect x="396" y="282" width="134" height="22" rx="5" fill="#083344" stroke="#0891b2" stroke-width="1"/>
+  <text x="463" y="297" text-anchor="middle" fill="#a5f3fc" font-size="8.5">Tick check every 30 s</text>
+  <text x="463" y="307" text-anchor="middle" fill="#475569" font-size="7.5">TICK_INTERVAL_MS</text>
+
+  <!-- ═══ PHASE 4: Disconnect ═══ -->
+  <rect x="560" y="68" width="166" height="380" rx="12" fill="#0a1f14" stroke="#22c55e" stroke-width="2"/>
+  <rect x="560" y="68" width="166" height="34" rx="12" fill="#14532d"/>
+  <rect x="560" y="88" width="166" height="14" fill="#14532d"/>
+  <text x="643" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">4. Disconnect</text>
+  <text x="643" y="100" text-anchor="middle" fill="#bbf7d0" font-size="8">Normal close or error</text>
+
+  <rect x="576" y="112" width="134" height="22" rx="5" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="643" y="127" text-anchor="middle" fill="#86efac" font-size="8.5">Remove from clients set</text>
+
+  <rect x="576" y="140" width="134" height="22" rx="5" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="643" y="155" text-anchor="middle" fill="#86efac" font-size="8.5">Abort pending agent runs</text>
+  <text x="643" y="165" text-anchor="middle" fill="#475569" font-size="7.5">if client owned them</text>
+
+  <rect x="576" y="178" width="134" height="22" rx="5" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="643" y="193" text-anchor="middle" fill="#86efac" font-size="8.5">removeRemoteNodeInfo()</text>
+
+  <rect x="576" y="206" width="134" height="22" rx="5" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="643" y="221" text-anchor="middle" fill="#86efac" font-size="8.5">incrementPresenceVersion()</text>
+
+  <rect x="576" y="234" width="134" height="22" rx="5" fill="#14291e" stroke="#22c55e" stroke-width="1"/>
+  <text x="643" y="249" text-anchor="middle" fill="#86efac" font-size="8.5">Broadcast presence update</text>
+
+  <!-- Phase arrows -->
+  <line x1="186" y1="220" x2="200" y2="220" stroke="#475569" stroke-width="2"/>
+  <polygon points="196,215 204,220 196,225" fill="#475569"/>
+
+  <line x1="366" y1="220" x2="380" y2="220" stroke="#475569" stroke-width="2"/>
+  <polygon points="376,215 384,220 376,225" fill="#475569"/>
+
+  <line x1="546" y1="200" x2="560" y2="200" stroke="#475569" stroke-width="2"/>
+  <polygon points="556,195 564,200 556,205" fill="#475569"/>
+
+  <!-- ═══ RIGHT: WsClient struct ═══ -->
+  <rect x="740" y="68" width="144" height="380" rx="12" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+  <text x="812" y="86" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="700">GatewayWsClient</text>
+  <text x="812" y="100" text-anchor="middle" fill="#475569" font-size="8">ws-types.ts</text>
+
+  <rect x="754" y="110" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="123" text-anchor="middle" fill="#64748b" font-size="7.5">connId: string (UUID)</text>
+
+  <rect x="754" y="132" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="145" text-anchor="middle" fill="#64748b" font-size="7.5">ws: WebSocket</text>
+
+  <rect x="754" y="154" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="167" text-anchor="middle" fill="#64748b" font-size="7.5">connect: ConnectParams</text>
+
+  <rect x="754" y="176" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="189" text-anchor="middle" fill="#64748b" font-size="7.5">role: operator | node</text>
+
+  <rect x="754" y="198" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="211" text-anchor="middle" fill="#64748b" font-size="7.5">scopes: string[]</text>
+
+  <rect x="754" y="220" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="233" text-anchor="middle" fill="#64748b" font-size="7.5">clientIp: string</text>
+
+  <rect x="754" y="242" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="255" text-anchor="middle" fill="#64748b" font-size="7.5">isLoopback: boolean</text>
+
+  <rect x="754" y="264" width="116" height="18" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="812" y="277" text-anchor="middle" fill="#64748b" font-size="7.5">user?: string</text>
+
+  <!-- ═══ Bottom constants ═══ -->
+  <rect x="20" y="462" width="860" height="28" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="200" y="480" text-anchor="middle" fill="#475569" font-size="9" font-weight="600">Key constants:</text>
+  <text x="450" y="480" text-anchor="middle" fill="#64748b" font-size="9">Handshake timeout: 3 s · Max payload: 25 MB · Buffer limit: 50 MB/conn · Pre-auth limit: 64 KB · Tick: 30 s</text>
+
+</svg>
